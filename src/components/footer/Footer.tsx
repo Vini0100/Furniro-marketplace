@@ -8,8 +8,8 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="flex flex-col mx-auto gap-9 max-w-[1440px]">
-      <div className="flex justify-between gap-4 md:0 flex-col items-center md:flex-row">
+    <footer className="flex flex-col mx-auto gap-9 max-w-screen-xl px-1">
+      <div className="flex justify-between gap-4 md:0 flex-col md:flex-row">
         <div className="flex flex-col md:gap-14 font-poppins">
           <h2 className="font-bold text-2xl">Funiro.</h2>
           <div className="text-base text-customGray">
@@ -33,10 +33,10 @@ const Footer = () => {
             </ul>
           </nav>
         </div>
-        <div className="flex md:flex-col gap-4 md:gap-14 self font-poppinss">
+        <div className="flex md:flex-col gap-4 md:gap-14 self font-poppins font-medium">
           <h4 className="text-base text-customGray">Links</h4>
           <nav>
-            <ul className="flex md:flex-col gap-1 md:gap-[46px]">
+            <ul className="flex md:flex-col gap-1 md:gap-[2.87rem]">
               <li>
                 <Link to="/">Home</Link>
               </li>
@@ -52,10 +52,10 @@ const Footer = () => {
             </ul>
           </nav>
         </div>
-        <div className="flex md:flex-col gap-4 md:gap-14 font-poppins">
+        <div className="flex md:flex-col gap-4 md:gap-14 font-poppins font-medium">
           <h4 className="text-base text-customGray">Help</h4>
           <nav>
-            <ul className="flex md:flex-col gap-1 md:gap-[46px]">
+            <ul className="flex md:flex-col gap-1 md:gap-[2.87rem]">
               <li>
                 <Link to="#">Payment Options</Link>
               </li>

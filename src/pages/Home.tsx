@@ -1,7 +1,11 @@
+import BrowseRange from "../components/home/BrowseRange";
+import Discover from "../components/home/Discover";
+
 const Home = () => {
   return (
     <div>
-      <p className="font-poppins">Home</p>
+      <Discover />
+      <BrowseRange />
     </div>
   );
 };
