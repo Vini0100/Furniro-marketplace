@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import user from "../../assets/images/icons/user.svg";
-import card from "../../assets/images/icons/card.svg";
+import cart from "../../assets/images/icons/cart.svg";
 import logotype from "../../assets/images/logotype.svg";
 
 const Header = () => {
   return (
-    <header className="bg-white flex items-center justify-between py-7 px-24 flex-col md:flex-row gap-3 md:gap-0">
+    <header className="bg-white flex items-center justify-between mx-auto max-w-[1440px] flex-col md:flex-row gap-3 md:gap-0">
       <div className="flex gap-1 items-center">
         <img src={logotype} alt="Logotype" className="w-[50px] h-8" />
         <h1 className="font-bold font-montserrat text-[34px]">Furniro</h1>
@@ -31,7 +31,7 @@ const Header = () => {
           <img src={user} alt="User" />
         </Link>
         <Link to="#">
-          <img src={card} alt="Card" />
+          <img src={cart} alt="Cart" />
         </Link>
       </div>
     </header>
