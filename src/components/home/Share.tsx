@@ -59,24 +59,24 @@ const Share = () => {
             <img
               src={room2}
               alt="Room 2"
-              className="w-full md:w-[17.125rem] h-auto md:h-[23.875rem]"
+              className="w-full md:w-[17.125rem] h-auto md:h-[21.75rem]"
             />
             <img
               src={dinner2}
               alt="Dinner 2"
-              className="w-full md:w-[28.1875rem] h-auto md:h-[19.5rem]"
+              className="w-full md:w-[28.1875rem] h-auto md:h-[27.0625rem]"
             />
           </div>
           <div className="flex items-start gap-4">
             <img
               src={living2}
               alt="Living Room 2"
-              className="w-full md:w-[23.8125rem] h-auto md:h-[20.1875rem]"
+              className="w-full md:w-[11.125rem] h-auto md:h-[15.125rem]"
             />
             <img
               src={kitchen}
               alt="Kitchen"
-              className="w-full md:w-[21.5rem] h-auto md:h-[15.125rem]"
+              className="w-full md:w-[16.125rem] h-auto md:h-[12.25rem]"
             />
           </div>
         </div>
