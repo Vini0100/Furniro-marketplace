@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className="max-w-[1440px] mx-auto">
+      <main>
         <Outlet />
       </main>
       <Footer />

@@ -1,6 +1,7 @@
+import { product } from "../../types/product";
 import CarouselBR from "./CarouselBR";
 
-const BrowseRange = () => {
+const BrowseRange = ({ products }: { products: product[] }) => {
   return (
     <section className="font-poppins flex flex-col items-center gap-[3.875rem] max-w-[1183px] mx-auto">
       <div className="flex flex-col text-center">
@@ -10,7 +11,7 @@ const BrowseRange = () => {
         </h3>
       </div>
       <div className="flex justify-center">
-        <CarouselBR />
+        <CarouselBR products={products} />
       </div>
     </section>
   );

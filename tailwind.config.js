@@ -5,6 +5,7 @@ export default {
     extend: {
       colors: {
         customYellow: "#FFF3E3",
+        customBeige: "#FCF8F3",
         customGold: "#B88E2F",
         customGray: "#9F9F9F",
         customGray2: "#333333",
