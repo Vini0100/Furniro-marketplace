@@ -4,6 +4,8 @@ import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Shop from "../pages/Shop";
 import About from "../pages/About";
+import Cart from "../pages/Cart";
+import Checkout from "../pages/Checkout";
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ export const router = createBrowserRouter([
       {
         path: "contact",
         element: <Contact />,
+      },
+      {
+        path: "cart",
+        element: <Cart />,
+      },
+      {
+        path: "checkout",
+        element: <Checkout />,
       },
     ],
   },

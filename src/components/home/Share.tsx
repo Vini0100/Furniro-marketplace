@@ -1,16 +1,16 @@
-import living from "../../assets/images/home/FuniroFurniture/living.png";
-import office from "../../assets/images/home/FuniroFurniture/office.png";
-import room from "../../assets/images/home/FuniroFurniture/room.png";
-import tables from "../../assets/images/home/FuniroFurniture/tables.png";
-import dinner from "../../assets/images/home/FuniroFurniture/dinner.png";
-import room2 from "../../assets/images/home/FuniroFurniture/room2.png";
-import dinner2 from "../../assets/images/home/FuniroFurniture/dinner2.png";
-import living2 from "../../assets/images/home/FuniroFurniture/living2.png";
-import kitchen from "../../assets/images/home/FuniroFurniture/kitchen.png";
+import living from "../../assets/images/home/funiroFurniture/living.png";
+import office from "../../assets/images/home/funiroFurniture/office.png";
+import room from "../../assets/images/home/funiroFurniture/room.png";
+import tables from "../../assets/images/home/funiroFurniture/tables.png";
+import dinner from "../../assets/images/home/funiroFurniture/dinner.png";
+import room2 from "../../assets/images/home/funiroFurniture/room2.png";
+import dinner2 from "../../assets/images/home/funiroFurniture/dinner2.png";
+import living2 from "../../assets/images/home/funiroFurniture/living2.png";
+import kitchen from "../../assets/images/home/funiroFurniture/kitchen.png";
 
 const Share = () => {
   return (
-    <section className="mx-auto font-poppins px-1">
+    <section className="mx-auto font-poppins px-1 pb-12">
       <div className="flex flex-col items-center">
         <h3 className="text-customGray4 font-semibold text-xl">
           Share your setup with

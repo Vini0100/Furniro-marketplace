@@ -19,7 +19,7 @@ const Inspirations = ({ products }: { products: product[] }) => {
             Explore More
           </button>
         </div>
-        <div>
+        <div className="h-[41.875rem]">
           <CarouselIns products={products} />
         </div>
       </div>

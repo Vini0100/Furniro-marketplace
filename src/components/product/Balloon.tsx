@@ -1,6 +1,6 @@
-interface BalloonProps {
+type BalloonProps = {
   discount: number | null;
-}
+};
 
 const Balloon: React.FC<BalloonProps> = ({ discount }) => {
   return (

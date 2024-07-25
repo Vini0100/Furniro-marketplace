@@ -19,9 +19,9 @@ const shuffleArray = <T,>(array: T[]): T[] => {
   return array;
 };
 
-interface PropsList {
+type PropsList = {
   products: product[];
-}
+};
 
 const ProductsList = ({ products }: PropsList) => {
   const shuffledProducts = shuffleArray(products);
