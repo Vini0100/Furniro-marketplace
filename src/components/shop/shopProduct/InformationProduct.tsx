@@ -9,7 +9,7 @@ const InformationProduct = () => {
   const [description, setDescription] = useState(true);
 
   return (
-    <section className="flex flex-col border-y border-customGray md:px-24">
+    <section className="flex flex-col border-y border-customGray9 md:px-24">
       <div className="flex flex-col">
         <nav className="py-9">
           <ul className="flex flex-col md:flex-row gap-14 md:gap-32 items-center justify-center font-medium text-2xl">
@@ -45,7 +45,7 @@ const InformationProduct = () => {
           </p>
         </div>
       </div>
-      <div className="flex py-9 justify-between flex-col md:flex-row">
+      <div className="flex py-9 justify-between flex-col lg:flex-row">
         <img
           src={product?.images?.gallery[0]}
           alt="Image 1"

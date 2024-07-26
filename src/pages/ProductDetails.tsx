@@ -28,7 +28,7 @@ const ProductDetails = () => {
   }, [productId, products, dispatch]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-8">
       <TopBarProduct />
       {found ? (
         <div className="flex flex-col gap-9">

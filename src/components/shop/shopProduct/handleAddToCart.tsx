@@ -17,7 +17,7 @@ const AddToCart = () => {
 
   return (
     <div className="flex flex-col md:flex-row items-center gap-2 font-poppins">
-      <div className="flex py-5 px-3 items-center border border-customGray rounded-lg text-base font-medium">
+      <div className="flex py-5 px-3 items-center border border-customGray9 rounded-lg text-base font-medium">
         <button onClick={decreaseQuantity}>-</button>
         <span className="px-9">{quantity}</span>
         <button onClick={increaseQuantity}>+</button>
