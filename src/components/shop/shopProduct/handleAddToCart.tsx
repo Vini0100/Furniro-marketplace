@@ -1,6 +1,13 @@
 import { useState } from "react";
+import { AppDispatch, RootState } from "../../../redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { addProductToCart } from "../../../redux/features/cart/cartSlice";
 
 const AddToCart = () => {
+  const dispatch = useDispatch<AppDispatch>();
+  const product = useSelector(
+    (state: RootState) => state.productDetail.product
+  );
   const [quantity, setQuantity] = useState(1);
 
   const increaseQuantity = () => {
@@ -12,7 +19,13 @@ const AddToCart = () => {
   };
 
   const handleAddToCart = () => {
-    console.log(`Added ${quantity} items to cart`);
+    if (product) {
+      const productWithQuantity = {
+        ...product,
+        quantity: quantity,
+      };
+      dispatch(addProductToCart(productWithQuantity));
+    }
   };
 
   return (

@@ -1,7 +1,7 @@
 import { VscChevronRight } from "react-icons/vsc";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { RootState } from "../../redux/store";
+import { RootState } from "../../../redux/store";
 
 const TopBarProduct = () => {
   const product = useSelector(

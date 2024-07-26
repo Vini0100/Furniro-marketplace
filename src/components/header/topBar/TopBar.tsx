@@ -1,5 +1,5 @@
 import { VscChevronRight } from "react-icons/vsc";
-import logotype from "../../assets/images/logotype.svg";
+import logotype from "../../../assets/images/logotype.svg";
 import { useLocation } from "react-router-dom";
 
 const TopBar = () => {

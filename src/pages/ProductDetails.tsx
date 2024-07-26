@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import TopBarProduct from "../components/topBar/TopBarProduct";
+import TopBarProduct from "../components/header/topBar/TopBarProduct";
 import { useEffect, useState } from "react";
 import { addProduct } from "../redux/features/products/productDetailsSlice";
 import { useDispatch, useSelector } from "react-redux";

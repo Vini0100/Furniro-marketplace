@@ -101,9 +101,10 @@ const Login = () => {
           <div className="flex">
             <button
               onClick={() => signInWithGoogle()}
-              className="p-1 text-white bg-red-600 rounded-full"
+              className="p-2 text-white bg-red-600 rounded-lg flex flex-row items-center text-lg gap-3 font-semibold"
             >
               <FaGoogle className="size-7" />
+              Login with Gmail
             </button>
           </div>
           {googleError && (

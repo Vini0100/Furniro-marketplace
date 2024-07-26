@@ -1,4 +1,4 @@
-import TopBar from "../components/topBar/TopBar";
+import TopBar from "../components/header/topBar/TopBar";
 import { useNotAuthRedirect } from "../Service/firebase/Firebasehooks";
 
 const Checkout = () => {
