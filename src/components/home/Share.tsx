@@ -1,16 +1,16 @@
-import living from "../../assets/images/home/FuniroFurniture/living.png";
-import office from "../../assets/images/home/FuniroFurniture/office.png";
-import room from "../../assets/images/home/FuniroFurniture/room.png";
-import tables from "../../assets/images/home/FuniroFurniture/tables.png";
-import dinner from "../../assets/images/home/FuniroFurniture/dinner.png";
-import room2 from "../../assets/images/home/FuniroFurniture/room2.png";
-import dinner2 from "../../assets/images/home/FuniroFurniture/dinner2.png";
-import living2 from "../../assets/images/home/FuniroFurniture/living2.png";
-import kitchen from "../../assets/images/home/FuniroFurniture/kitchen.png";
+import living from "../../assets/images/home/funiroFurniture/living.png";
+import office from "../../assets/images/home/funiroFurniture/office.png";
+import room from "../../assets/images/home/funiroFurniture/room.png";
+import tables from "../../assets/images/home/funiroFurniture/tables.png";
+import dinner from "../../assets/images/home/funiroFurniture/dinner.png";
+import room2 from "../../assets/images/home/funiroFurniture/room2.png";
+import dinner2 from "../../assets/images/home/funiroFurniture/dinner2.png";
+import living2 from "../../assets/images/home/funiroFurniture/living2.png";
+import kitchen from "../../assets/images/home/funiroFurniture/kitchen.png";
 
 const Share = () => {
   return (
-    <section className="mx-auto font-poppins px-1">
+    <section className="mx-auto font-poppins px-1 pb-12">
       <div className="flex flex-col items-center">
         <h3 className="text-customGray4 font-semibold text-xl">
           Share your setup with
@@ -20,7 +20,6 @@ const Share = () => {
         </h2>
       </div>
       <div className="flex flex-col md:flex-row gap-4 overflow-hidden">
-        {/* Col1 */}
         <div className="flex flex-col gap-4">
           <div className="flex items-end gap-4">
             <img
@@ -47,13 +46,11 @@ const Share = () => {
             />
           </div>
         </div>
-        {/* Col2 */}
         <div className="flex items-center justify-center">
           <div>
             <img src={dinner} alt="Dinner" className="w-full h-auto" />
           </div>
         </div>
-        {/* Col3 */}
         <div className="flex flex-col gap-4">
           <div className="flex items-end gap-4">
             <img

@@ -6,6 +6,8 @@ export default {
       colors: {
         customYellow: "#FFF3E3",
         customBeige: "#FCF8F3",
+        customBeige2: "#F9F1E7",
+        customBeige3: "#FAF3EA",
         customGold: "#B88E2F",
         customGray: "#9F9F9F",
         customGray2: "#333333",
@@ -25,6 +27,7 @@ export default {
       backgroundImage: {
         scandinavianBackground:
           "url('./src/assets/images/home/scandinavian-interior-mockup-wall-decal-background.png')",
+        topBarBackground: "url('./src/assets/images/topBar/topBarBg.png')",
       },
     },
   },
