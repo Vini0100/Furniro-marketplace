@@ -1,7 +1,10 @@
-import { product } from "../../types/product";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 import CarouselIns from "./CarouselIns";
 
-const Inspirations = ({ products }: { products: product[] }) => {
+const Inspirations = () => {
+  const products = useSelector((state: RootState) => state.products.products);
+
   return (
     <section className="bg-customBeige py-11 px-[6.25rem] font-poppins">
       <div className="flex items-center flex-col md:flex-row gap-[2.625rem]">
@@ -11,7 +14,7 @@ const Inspirations = ({ products }: { products: product[] }) => {
               50+ Beautiful rooms inspiration
             </h2>
             <p className="text-customGray4 font-medium text-base">
-              Our designer already made a lot of beautiful prototipe of rooms
+              Our designer already made a lot of beautiful prototypes of rooms
               that inspire you
             </p>
           </div>

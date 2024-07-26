@@ -1,11 +1,14 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 import Product from "../product/Product";
-import { product } from "../../types/product";
 import ButtonsList from "./ButtonsList";
 
 const ITEMS_PER_PAGE = 16;
 
-const List = ({ products }: { products: product[] }) => {
+const List = () => {
+  const products = useSelector((state: RootState) => state.products.products);
+
   const [currentPage, setCurrentPage] = useState(0);
 
   const startIndex = currentPage * ITEMS_PER_PAGE;
@@ -27,8 +30,8 @@ const List = ({ products }: { products: product[] }) => {
   return (
     <section className="relative font-poppins max-w-[1236px] mx-auto pt-11 pb-20">
       <div className="flex flex-wrap gap-8 justify-center md:justify-start">
-        {currentProducts.map((product, index) => (
-          <Product product={product} key={index} />
+        {currentProducts.map((product) => (
+          <Product product={product} key={product.id} />
         ))}
       </div>
 

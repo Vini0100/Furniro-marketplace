@@ -2,11 +2,11 @@ import { VscChevronRight } from "react-icons/vsc";
 import logotype from "../../assets/images/logotype.svg";
 import { useLocation } from "react-router-dom";
 
-const capitalizeFirstLetter = (string: string) => {
-  return string.charAt(0).toUpperCase() + string.slice(1);
-};
-
 const TopBar = () => {
+  const capitalizeFirstLetter = (string: string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  };
+
   const location = useLocation();
   const pathname = location.pathname.replace(/^\/+/, "");
   const formattedPathname = capitalizeFirstLetter(pathname);

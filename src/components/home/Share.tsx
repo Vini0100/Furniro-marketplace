@@ -20,7 +20,6 @@ const Share = () => {
         </h2>
       </div>
       <div className="flex flex-col md:flex-row gap-4 overflow-hidden">
-        {/* Col1 */}
         <div className="flex flex-col gap-4">
           <div className="flex items-end gap-4">
             <img
@@ -47,13 +46,11 @@ const Share = () => {
             />
           </div>
         </div>
-        {/* Col2 */}
         <div className="flex items-center justify-center">
           <div>
             <img src={dinner} alt="Dinner" className="w-full h-auto" />
           </div>
         </div>
-        {/* Col3 */}
         <div className="flex flex-col gap-4">
           <div className="flex items-end gap-4">
             <img

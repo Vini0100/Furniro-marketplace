@@ -2,6 +2,7 @@ import { IoMdShare } from "react-icons/io";
 import { product } from "../../types/product";
 import Balloon from "./Balloon";
 import { VscArrowSwap, VscHeart } from "react-icons/vsc";
+import { Link } from "react-router-dom";
 
 const Product = ({ product }: { product: product }) => {
   return (
@@ -37,7 +38,10 @@ const Product = ({ product }: { product: product }) => {
           ) : null}
         </div>
       </div>
-      <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-6">
+      <Link
+        to={`/shop/${product.sku}`}
+        className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-6"
+      >
         <button className="text-customGold bg-white py-3 px-14 text-base font-semibold">
           Add to cart
         </button>
@@ -63,7 +67,7 @@ const Product = ({ product }: { product: product }) => {
             </li>
           </ul>
         </nav>
-      </div>
+      </Link>
     </div>
   );
 };

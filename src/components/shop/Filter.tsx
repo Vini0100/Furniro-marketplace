@@ -4,7 +4,7 @@ import { TiThLarge } from "react-icons/ti";
 
 const Filter = () => {
   return (
-    <nav className="flex flex-col md:flex-row bg-customBeige2 md:px-24 px-2 py-6 gap-4 md:gap-0 justify-between font-poppins center">
+    <nav className="flex flex-col md:flex-row bg-customBeige2 md:px-24 px-2 py-6 gap-4 md:gap-0 justify-between font-poppins">
       <div className="flex flex-wrap md:flex-nowrap items-center gap-6 justify-center md:justify-start">
         <button className="flex items-center gap-3 font-normal text-xl bg-transparent border-none">
           <HiOutlineAdjustmentsHorizontal className="size-5" />

@@ -1,47 +1,30 @@
-import { Link } from "react-router-dom";
-import { product } from "../../types/product";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
 import Product from "../product/Product";
+import ShowMoreBtn from "../global/ShowMoreBtn";
 
-const shuffleArray = <T,>(array: T[]): T[] => {
-  let currentIndex = array.length,
-    randomIndex;
+const ProductsList = () => {
+  const navigate = useNavigate();
+  const products = useSelector((state: RootState) => state.products.products);
 
-  while (currentIndex !== 0) {
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex--;
+  const shuffledProducts = [...products]
+    .sort(() => Math.random() - 0.5)
+    .slice(0, 8);
 
-    [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex],
-      array[currentIndex],
-    ];
-  }
-
-  return array;
-};
-
-type PropsList = {
-  products: product[];
-};
-
-const ProductsList = ({ products }: PropsList) => {
-  const shuffledProducts = shuffleArray(products);
-  const randomProducts = shuffledProducts.slice(0, 8);
-  console.log(randomProducts);
+  const handleClick = () => {
+    navigate("/shop");
+  };
 
   return (
     <section className="flex flex-col items-center gap-8 mx-auto max-w-[1236px] font-poppins">
       <h2 className="text-customGray5 text-[2.5rem] font-bold">Our Products</h2>
       <div className="flex flex-wrap gap-8 justify-center">
-        {randomProducts.map((product) => (
+        {shuffledProducts.map((product) => (
           <Product key={product.id} product={product} />
         ))}
       </div>
-      <Link
-        to={"/shop"}
-        className="py-3 px-[4.625rem] text-customGold font-semibold text-base border border-customGold"
-      >
-        Show More
-      </Link>
+      <ShowMoreBtn handleClick={handleClick} />
     </section>
   );
 };
