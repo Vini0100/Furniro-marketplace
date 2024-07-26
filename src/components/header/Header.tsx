@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
-import user from "../../assets/images/icons/user.svg";
+import userIcon from "../../assets/images/icons/user.svg";
 import cart from "../../assets/images/icons/cart.svg";
 import logotype from "../../assets/images/logotype.svg";
+import Logout from "../global/handleLogout";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../Service/firebase/firebaseConfig";
 
 const Header = () => {
+  const [user] = useAuthState(auth);
+
   return (
     <header className="bg-white flex items-center justify-between mx-auto max-w-screen-xl flex-col md:flex-row gap-3 md:gap-0 px-1 py-7">
       <div className="flex gap-1 items-center">
@@ -27,9 +32,12 @@ const Header = () => {
         </ul>
       </nav>
       <div className="flex gap-9">
-        <Link to="#">
-          <img src={user} alt="User" />
-        </Link>
+        {user && <Logout />}
+        {!user && (
+          <Link to="/login">
+            <img src={userIcon} alt="User" />
+          </Link>
+        )}
         <Link to="#">
           <img src={cart} alt="Cart" />
         </Link>
