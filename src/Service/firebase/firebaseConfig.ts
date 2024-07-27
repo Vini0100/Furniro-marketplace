@@ -2,12 +2,12 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyB2R0vzVC166L9yRRtnqj9SgfeaNS7s6GU",
-  authDomain: "challenge-week-12-compass.firebaseapp.com",
-  projectId: "challenge-week-12-compass",
-  storageBucket: "challenge-week-12-compass.appspot.com",
-  messagingSenderId: "167165453391",
-  appId: "1:167165453391:web:ce7887b36c2333e993763a",
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 
 const app = initializeApp(firebaseConfig);
