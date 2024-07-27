@@ -1,7 +1,4 @@
 import CardBR from "./CardBR";
-import bedroom from "../../assets/images/home/browseRange/bedroom.png";
-import living from "../../assets/images/home/browseRange/living.png";
-import dining from "../../assets/images/home/browseRange/dining.png";
 
 const BrowseRange = () => {
   return (
@@ -13,9 +10,18 @@ const BrowseRange = () => {
         </h3>
       </div>
       <div className="flex flex-col lg:flex-row items-center gap-5">
-        <CardBR src={bedroom} categoty={"Dining"} />
-        <CardBR src={living} categoty={"Living"} />
-        <CardBR src={dining} categoty={"Bedroom"} />
+        <CardBR
+          src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/browseRange/bedroom.png"
+          categoty={"Dining"}
+        />
+        <CardBR
+          src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/browseRange/dining.png"
+          categoty={"Living"}
+        />
+        <CardBR
+          src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/browseRange/living.png"
+          categoty={"Bedroom"}
+        />
       </div>
     </section>
   );

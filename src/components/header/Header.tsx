@@ -1,7 +1,4 @@
 import { Link } from "react-router-dom";
-import userIcon from "../../assets/images/icons/user.svg";
-import cart from "../../assets/images/icons/cart.svg";
-import logotype from "../../assets/images/logotype.svg";
 import Logout from "../global/handleLogout";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Service/firebase/firebaseConfig";
@@ -18,7 +15,13 @@ const Header = () => {
     <header className="relative bg-white font-poppins">
       <div className=" flex items-center justify-between mx-auto max-w-screen-xl flex-col md:flex-row gap-3 md:gap-0 px-1 py-7">
         <div className="flex gap-1 items-center">
-          <img src={logotype} alt="Logotype" className="w-[50px] h-8" />
+          <img
+            src={
+              "https://challenge-week-12-compass.s3.amazonaws.com/images/logotype/logotype.svg"
+            }
+            alt="Logotype"
+            className="w-[50px] h-8"
+          />
           <h1 className="font-bold font-montserrat text-[34px]">Furniro</h1>
         </div>
         <nav>
@@ -41,12 +44,15 @@ const Header = () => {
           {user && <Logout />}
           {!user && (
             <Link to="/login">
-              <img src={userIcon} alt="User" />
+              <img
+                src="https://challenge-week-12-compass.s3.amazonaws.com/images/icons/user.svg"
+                alt="User"
+              />
             </Link>
           )}
           <div>
             <img
-              src={cart}
+              src="https://challenge-week-12-compass.s3.amazonaws.com/images/icons/cart.svg"
               alt="Cart"
               onClick={showSideBar}
               className="cursor-pointer"
