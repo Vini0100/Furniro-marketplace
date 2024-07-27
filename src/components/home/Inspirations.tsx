@@ -7,7 +7,7 @@ const Inspirations = () => {
 
   return (
     <section className="bg-customBeige py-11 px-[6.25rem] font-poppins">
-      <div className="flex items-center flex-col md:flex-row gap-[2.625rem]">
+      <div className="flex items-center flex-col lg:flex-row gap-[2.625rem]">
         <div className="flex flex-col gap-6 items-start max-w-[26.375rem]">
           <div className="flex flex-col gap-2">
             <h2 className="font-bold text-[2.5rem] leading-[3rem]">

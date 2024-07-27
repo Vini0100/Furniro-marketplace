@@ -28,3 +28,7 @@ type Iimages = {
   mainImage: string;
   gallery: string[];
 };
+
+export interface ProductWithQuantity extends product {
+  quantity?: number;
+}

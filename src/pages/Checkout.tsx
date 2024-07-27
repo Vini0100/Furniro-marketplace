@@ -1,4 +1,6 @@
-import TopBar from "../components/topBar/TopBar";
+import BottomBar from "../components/bottonBar/BottonBar";
+import FormCheckout from "../components/checkout/FormCheckout";
+import TopBar from "../components/header/topBar/TopBar";
 import { useNotAuthRedirect } from "../Service/firebase/Firebasehooks";
 
 const Checkout = () => {
@@ -6,6 +8,8 @@ const Checkout = () => {
   return (
     <div>
       <TopBar />
+      <FormCheckout />
+      <BottomBar />
     </div>
   );
 };

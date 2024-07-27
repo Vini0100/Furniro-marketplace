@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import TopBarProduct from "../components/topBar/TopBarProduct";
+import TopBarProduct from "../components/header/topBar/TopBarProduct";
 import { useEffect, useState } from "react";
 import { addProduct } from "../redux/features/products/productDetailsSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -28,7 +28,7 @@ const ProductDetails = () => {
   }, [productId, products, dispatch]);
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-8">
       <TopBarProduct />
       {found ? (
         <div className="flex flex-col gap-9">

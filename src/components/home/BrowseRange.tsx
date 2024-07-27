@@ -12,7 +12,7 @@ const BrowseRange = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit.
         </h3>
       </div>
-      <div className="flex flex-col md:flex-row items-center gap-5">
+      <div className="flex flex-col lg:flex-row items-center gap-5">
         <CardBR src={bedroom} categoty={"Dining"} />
         <CardBR src={living} categoty={"Living"} />
         <CardBR src={dining} categoty={"Bedroom"} />
