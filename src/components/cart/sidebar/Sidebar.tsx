@@ -40,7 +40,7 @@ const Sidebar = ({ active }: SlidebarProps) => {
       </div>
       <div className="flex justify-between items-center border-t border-customGray9 p-7">
         <ButtonCart onClick={() => navigate("/cart")}>Cart</ButtonCart>
-        <ButtonCart>Checkout</ButtonCart>
+        <ButtonCart onClick={() => navigate("/checkout")}>Checkout</ButtonCart>
         <ButtonCart>Comparison</ButtonCart>
       </div>
     </div>
