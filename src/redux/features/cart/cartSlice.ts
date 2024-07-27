@@ -49,6 +49,9 @@ const cartSlice = createSlice({
         (product) => product.sku !== action.payload
       );
     },
+    resetProductFromCart: (state) => {
+      state.products = [];
+    },
   },
 });
 
@@ -56,5 +59,6 @@ export const {
   addProductToCart,
   updateProductQuantity,
   removeProductFromCart,
+  resetProductFromCart,
 } = cartSlice.actions;
 export default cartSlice.reducer;

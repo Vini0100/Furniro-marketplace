@@ -35,8 +35,8 @@ const BottomBar = () => {
   return (
     <section className="bg-customBeige3 px-2 py-8 md:px-[3.3125rem] md:py-[6.5625rem]">
       <nav className="flex flex-wrap md:flex-nowrap justify-center md:justify-between items-stretch gap-6">
-        {items.map((item) => (
-          <Card item={item} />
+        {items.map((item, index) => (
+          <Card key={index} item={item} />
         ))}
       </nav>
     </section>

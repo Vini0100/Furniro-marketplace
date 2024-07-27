@@ -36,18 +36,20 @@ const CartPage = () => {
           ))}
         </ul>
       </div>
-      <div className="flex flex-col gap-10 items-center bg-customBeige2 pt-4 pb-24 px-[4.688rem]">
-        <h2 className="font-semibold text-[2rem] pb-5">Cart Totals</h2>
+      <div className="flex flex-col gap-10 items-center bg-customBeige2 pt-4 pb-24 px-[4.688rem] h-fit">
+        <h2 className="font-semibold text-[2rem] pb-5 whitespace-nowrap">
+          Cart Totals
+        </h2>
         <ul className="flex flex-col gap-7 font-medium text-base">
           <li className="flex gap-4 items-center">
-            <span className="w-20">Subtotal</span>
-            <span className="font-normal text-base text-customGray">
+            <span className="w-20 whitespace-nowrap">Subtotal</span>
+            <span className="font-normal text-base text-customGray whitespace-nowrap">
               Rp. {subtotal.toFixed(2)}
             </span>
           </li>
           <li className="flex gap-4 items-center">
-            <span className="w-20">Total</span>
-            <span className="font-medium text-xl text-customGold">
+            <span className="w-20 whitespace-nowrap">Total</span>
+            <span className="font-medium text-xl text-customGold whitespace-nowrap">
               Rp. {subtotal.toFixed(2)}
             </span>
           </li>
