@@ -27,8 +27,9 @@ export default {
       },
       backgroundImage: {
         scandinavianBackground:
-          "url('./src/assets/images/home/scandinavian-interior-mockup-wall-decal-background.png')",
-        topBarBackground: "url('./src/assets/images/topBar/topBarBg.png')",
+          "url('https://challenge-week-12-compass.s3.amazonaws.com/images/home/scandinavian-interior-mockup-wall-decal-background.png')",
+        topBarBackground:
+          "url('https://challenge-week-12-compass.s3.amazonaws.com/images/topBar/topBarBg.png')",
       },
     },
   },

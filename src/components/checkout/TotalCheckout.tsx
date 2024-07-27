@@ -1,30 +1,11 @@
 import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
-import { z } from "zod";
-
-const productSchema = z.object({
-  id: z.string(),
-  title: z.string(),
-  normalPrice: z.number().min(0),
-  salePrice: z.number().min(0).optional(),
-  quantity: z.number().int().nonnegative().optional(),
-});
-
-const cartSchema = z.array(productSchema);
-
 const TotalCheckout = () => {
   const cart = useSelector((state: RootState) => state.cart.products);
 
-  const parsedCart = cartSchema.safeParse(cart);
-
-  if (!parsedCart.success) {
-    console.error("Cart validation error:", parsedCart.error);
-    return <div>There was an error with your cart.</div>;
-  }
-
   const calculateTotals = () => {
     let subtotal = 0;
-    parsedCart.data.forEach((product) => {
+    cart.forEach((product) => {
       const price =
         product.salePrice && product.salePrice > 0
           ? product.salePrice
@@ -43,7 +24,7 @@ const TotalCheckout = () => {
         <h3 className="font-medium text-2xl">Product</h3>
         <h3 className="font-medium text-2xl">Subtotal</h3>
       </li>
-      {parsedCart.data.map((product) => {
+      {cart.map((product) => {
         const price =
           product.salePrice && product.salePrice > 0
             ? product.salePrice

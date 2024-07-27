@@ -1,30 +1,26 @@
-import trophy from "../../assets/images/icons/trophy.svg";
-import guarantee from "../../assets/images/icons/guarantee.svg";
-import shipping from "../../assets/images/icons/shipping.svg";
-import customerSupport from "../../assets/images/icons/customerSupport.svg";
 import Card from "./Card";
 
 const items = [
   {
-    src: trophy,
+    src: "https://challenge-week-12-compass.s3.amazonaws.com/images/icons/trophy.svg",
     alt: "trophy",
     title: "High Quality",
     paragraph: "crafted from top materials",
   },
   {
-    src: guarantee,
+    src: "https://challenge-week-12-compass.s3.amazonaws.com/images/icons/guarantee.svg",
     alt: "guarantee",
     title: "Warranty Protection",
     paragraph: "Over 2 years",
   },
   {
-    src: shipping,
+    src: "https://challenge-week-12-compass.s3.amazonaws.com/images/icons/shipping.svg",
     alt: "shipping",
     title: "Free Shipping",
     paragraph: "Order over 150 $",
   },
   {
-    src: customerSupport,
+    src: "https://challenge-week-12-compass.s3.amazonaws.com/images/icons/customerSupport.svg",
     alt: "customer Support",
     title: "24 / 7 Support",
     paragraph: "Dedicated",

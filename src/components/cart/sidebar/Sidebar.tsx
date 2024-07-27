@@ -1,6 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import bagClose from "../../../assets/images/icons/bagClose.svg";
-
 import ButtonCart from "./ButtonCart";
 import ItemsCart from "./ItemsCart";
 import SubTotal from "./SubTotal";
@@ -27,7 +25,7 @@ const Sidebar = ({ active }: SlidebarProps) => {
         <div className="flex items-center justify-between">
           <h1 className="font-semibold text-2xl">Shopping Cart</h1>
           <img
-            src={bagClose}
+            src="https://challenge-week-12-compass.s3.amazonaws.com/images/icons/bagClose.svg"
             alt="Close Cart"
             onClick={closeSidebar}
             className="cursor-pointer"
