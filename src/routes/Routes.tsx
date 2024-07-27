@@ -3,7 +3,6 @@ import App from "../App";
 import Home from "../pages/Home";
 import Contact from "../pages/Contact";
 import Shop from "../pages/Shop";
-import About from "../pages/About";
 import Cart from "../pages/Cart";
 import Checkout from "../pages/Checkout";
 import ProductDetails from "../pages/ProductDetails";
@@ -25,10 +24,6 @@ export const router = createBrowserRouter([
       {
         path: "shop/:productId",
         element: <ProductDetails />,
-      },
-      {
-        path: "about",
-        element: <About />,
       },
       {
         path: "contact",
