@@ -3,7 +3,7 @@ import { IoIosCloseCircle } from "react-icons/io";
 import { RootState } from "../../../redux/store";
 import { removeProductFromCart } from "../../../redux/features/cart/cartSlice";
 
-const ProductsCart = () => {
+const ItemsCart = () => {
   const dispatch = useDispatch();
   const cart = useSelector((state: RootState) => state.cart.products);
 
@@ -50,4 +50,4 @@ const ProductsCart = () => {
   );
 };
 
-export default ProductsCart;
+export default ItemsCart;

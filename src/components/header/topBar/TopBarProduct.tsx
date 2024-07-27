@@ -9,8 +9,8 @@ const TopBarProduct = () => {
   );
 
   return (
-    <nav className="flex flex-col md:flex-row bg-customBeige2 md:px-24 px-2 py-6 gap-4 md:gap-0 justify-between font-poppins">
-      <div className="flex gap-6">
+    <nav className="flex flex-col md:flex-row bg-customBeige2 px-2 md:px-0 py-6 gap-4 md:gap-0 justify-between font-poppins">
+      <div className="flex gap-6 max-w-[1240px] mx-auto w-full">
         <div className="text-customGray text-base font-normal flex gap-6 items-center">
           <Link to={"/"}>Home</Link>
           <VscChevronRight className="text-lg text-black" />

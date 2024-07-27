@@ -2,16 +2,22 @@ import { IoMdShare } from "react-icons/io";
 import { product } from "../../types/product";
 import Balloon from "./Balloon";
 import { VscArrowSwap, VscHeart } from "react-icons/vsc";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { addProductToCart } from "../../redux/features/cart/cartSlice";
 
 const Product = ({ product }: { product: product }) => {
   const dispatch = useDispatch<AppDispatch>();
+  const navigate = useNavigate();
 
-  const handleClickAddToCart = () => {
+  const handleClickAddToCart = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.stopPropagation();
     dispatch(addProductToCart(product));
+  };
+
+  const handleClickNavigate = () => {
+    navigate(`/shop/${product.sku}`);
   };
 
   return (
@@ -47,8 +53,8 @@ const Product = ({ product }: { product: product }) => {
           ) : null}
         </div>
       </div>
-      <Link
-        to={`/shop/${product.sku}`}
+      <div
+        onClick={handleClickNavigate}
         className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 gap-6"
       >
         <button
@@ -79,7 +85,7 @@ const Product = ({ product }: { product: product }) => {
             </li>
           </ul>
         </nav>
-      </Link>
+      </div>
     </div>
   );
 };

@@ -1,7 +1,8 @@
+import { useNavigate } from "react-router-dom";
 import bagClose from "../../../assets/images/icons/bagClose.svg";
 
 import ButtonCart from "./ButtonCart";
-import ItemCart from "./ItemCart";
+import ItemsCart from "./ItemsCart";
 import SubTotal from "./SubTotal";
 
 type SlidebarProps = {
@@ -9,6 +10,7 @@ type SlidebarProps = {
 };
 
 const Sidebar = ({ active }: SlidebarProps) => {
+  const navigate = useNavigate();
   const closeSidebar = () => {
     active(false);
   };
@@ -32,12 +34,12 @@ const Sidebar = ({ active }: SlidebarProps) => {
           />
         </div>
         <div className="flex flex-col min-h-[31.25rem] pt-10 justify-between border-t border-customGray9 gap-6">
-          <ItemCart />
+          <ItemsCart />
           <SubTotal />
         </div>
       </div>
       <div className="flex justify-between items-center border-t border-customGray9 p-7">
-        <ButtonCart>Cart</ButtonCart>
+        <ButtonCart onClick={() => navigate("/cart")}>Cart</ButtonCart>
         <ButtonCart>Checkout</ButtonCart>
         <ButtonCart>Comparison</ButtonCart>
       </div>

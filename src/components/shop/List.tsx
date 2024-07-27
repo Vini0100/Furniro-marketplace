@@ -28,7 +28,7 @@ const List = () => {
   };
 
   return (
-    <section className="relative font-poppins max-w-[1236px] mx-auto pt-11 pb-20">
+    <section className="relative font-poppins max-w-[1240px] mx-auto pt-11 pb-20">
       <div className="flex flex-wrap gap-8 justify-center lg:justify-start">
         {currentProducts.map((product) => (
           <Product product={product} key={product.id} />

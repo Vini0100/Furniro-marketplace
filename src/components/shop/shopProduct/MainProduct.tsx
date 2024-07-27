@@ -7,7 +7,7 @@ import DetailsUlProduct from "./DetailsUlProduct";
 
 const MainProduct = () => {
   return (
-    <section className="px-24 flex flex-col lg:flex-row gap-20">
+    <section className="max-w-[1240px] mx-auto flex flex-col lg:flex-row gap-20">
       <ImagesProduct />
       <div className="flex flex-col gap-10">
         <div className="flex flex-col gap-5">

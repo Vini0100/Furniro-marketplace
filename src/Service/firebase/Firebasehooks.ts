@@ -1,28 +1,23 @@
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebaseConfig";
 
 const useAuthRedirect = (redirectPath: string) => {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!loading && user) {
-      navigate(redirectPath);
-    }
-  }, [user, loading, navigate, redirectPath]);
+  if (user) {
+    navigate(redirectPath);
+  }
 };
 
 const useNotAuthRedirect = (redirectPath: string) => {
-  const [user, loading] = useAuthState(auth);
+  const [user] = useAuthState(auth);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (!loading && !user) {
-      navigate(redirectPath);
-    }
-  }, [user, loading, navigate, redirectPath]);
+  if (!user) {
+    navigate(redirectPath);
+  }
 };
 
 export { useAuthRedirect, useNotAuthRedirect };
