@@ -1,11 +1,11 @@
 import { IoMdShare } from "react-icons/io";
-import { product } from "../../types/product";
-import Balloon from "./Balloon";
 import { VscArrowSwap, VscHeart } from "react-icons/vsc";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { addProductToCart } from "../../redux/features/cart/cartSlice";
+import { product } from "../../types/product";
+import Balloon from "./Balloon";
 
 const Product = ({ product }: { product: product }) => {
   const dispatch = useDispatch<AppDispatch>();
@@ -18,6 +18,14 @@ const Product = ({ product }: { product: product }) => {
 
   const handleClickNavigate = () => {
     navigate(`/shop/${product.sku}`);
+  };
+
+  const truncateText = (text: string, maxWords: number): string => {
+    const words = text.split(" ");
+    if (words.length > maxWords) {
+      return words.slice(0, maxWords).join(" ") + "...";
+    }
+    return text;
   };
 
   return (
@@ -40,15 +48,18 @@ const Product = ({ product }: { product: product }) => {
           {product.title}
         </h4>
         <p className="font-medium text-base text-customGray6">
-          {product.description?.short}
+          {product.description?.short
+            ? truncateText(product.description.short, 10)
+            : ""}
         </p>
         <div className="flex gap-4 items-center">
           <span className="text-xl text-customGray5 font-semibold">
-            Rp {product.normalPrice}
+            Rp{" "}
+            {product.salePrice !== 0 ? product.salePrice : product.normalPrice}
           </span>
           {product.salePrice !== 0 ? (
             <span className="text-base text-customGray8 font-normal line-through">
-              Rp {product.salePrice}
+              Rp {product.normalPrice}
             </span>
           ) : null}
         </div>
