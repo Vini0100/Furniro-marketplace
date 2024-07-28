@@ -31,15 +31,15 @@ const DetailsUlProduct = () => {
         <span className="text-black flex items-center gap-6">
           :{" "}
           <FaFacebook
-            className="size-5"
+            className="size-5 cursor-pointer"
             onClick={() => handleSocialMedia("https://www.facebook.com/")}
           />
           <FaLinkedin
-            className="size-5"
+            className="size-5 cursor-pointer"
             onClick={() => handleSocialMedia("https://www.linkedin.com/")}
           />
           <AiFillTwitterCircle
-            className="size-5"
+            className="size-5 cursor-pointer"
             onClick={() => handleSocialMedia("https://www.x.com/")}
           />
         </span>

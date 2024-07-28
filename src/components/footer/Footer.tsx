@@ -22,25 +22,22 @@ const Footer = () => {
             </div>
             <nav>
               <ul className="flex justify-center md:justify-start gap-4">
-                <li className="rounded-full shadow-md p-3">
+                <li className="rounded-full shadow-md p-3 cursor-pointer">
                   <FaFacebookF
-                    className="cursor-pointer"
                     onClick={() =>
                       handleSocialMedia("https://www.facebook.com/")
                     }
                   />
                 </li>
-                <li className="rounded-full shadow-md p-3">
+                <li className="rounded-full shadow-md p-3 cursor-pointer">
                   <FaInstagram
-                    className="cursor-pointer"
                     onClick={() =>
                       handleSocialMedia("https://www.instagram.com/")
                     }
                   />
                 </li>
-                <li className="rounded-full shadow-md p-3">
+                <li className="rounded-full shadow-md p-3 cursor-pointer">
                   <FaTwitter
-                    className="cursor-pointer"
                     onClick={() => handleSocialMedia("https://x.com/")}
                   />
                 </li>

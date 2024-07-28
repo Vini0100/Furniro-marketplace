@@ -72,7 +72,7 @@ const Filter = () => {
           <select
             id="shortBy"
             name="shortBy"
-            className="py-3 outline-none w-full px-[1.125rem]"
+            className="py-3 outline-none w-full px-[1.125rem] appearance-none"
             onChange={handleChangeCategory}
             value={selectedCategory}
           >
