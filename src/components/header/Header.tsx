@@ -2,14 +2,20 @@ import { Link } from "react-router-dom";
 import Logout from "../global/handleLogout";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Service/firebase/firebaseConfig";
-import { useState } from "react";
 import Sidebar from "../cart/sidebar/Sidebar";
+import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { useState } from "react";
 
 const Header = () => {
   const [user] = useAuthState(auth);
   const [sidebar, setSideBar] = useState(false);
-
+  const cart = useSelector((state: RootState) => state.cart.products);
   const showSideBar = () => setSideBar(!sidebar);
+
+  const quantity = cart.reduce((accumulator, currentValue) => {
+    return accumulator + (currentValue.quantity || 0);
+  }, 0);
 
   return (
     <header className="relative bg-white font-poppins">
@@ -50,13 +56,19 @@ const Header = () => {
               />
             </Link>
           )}
-          <div>
+          <div className="flex items-center">
+            {quantity > 0 && (
+              <div className="flex items-center bg-customGold rounded-full size-5 justify-center">
+                <p className="text-sm font-semibold text-white">{quantity}</p>
+              </div>
+            )}
             <img
               src="https://challenge-week-12-compass.s3.amazonaws.com/images/icons/cart.svg"
               alt="Cart"
               onClick={showSideBar}
               className="cursor-pointer"
             />
+
             {sidebar && <Sidebar active={setSideBar} />}
           </div>
         </div>

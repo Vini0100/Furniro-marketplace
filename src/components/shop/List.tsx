@@ -1,21 +1,44 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { RootState } from "../../redux/store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../redux/store";
 import Product from "../product/Product";
 import ButtonsList from "./ButtonsList";
-
-const ITEMS_PER_PAGE = 16;
+import { addTotalProducts } from "../../redux/features/filterShop/filterShopSlice";
 
 const List = () => {
+  const dispatch = useDispatch<AppDispatch>();
   const products = useSelector((state: RootState) => state.products.products);
-
+  const filterCategory = useSelector(
+    (state: RootState) => state.filterShop.category
+  );
+  const productsPerPage = useSelector(
+    (state: RootState) => state.filterShop.productsPerPage
+  );
   const [currentPage, setCurrentPage] = useState(0);
 
-  const startIndex = currentPage * ITEMS_PER_PAGE;
-  const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentProducts = products.slice(startIndex, endIndex);
+  const productsByCategory = products.filter(
+    (product) => product.category == filterCategory
+  );
 
-  const totalPages = Math.ceil(products.length / ITEMS_PER_PAGE);
+  const startIndex = currentPage * productsPerPage;
+  const endIndex = startIndex + productsPerPage;
+  const currentProducts =
+    productsByCategory && filterCategory !== "default"
+      ? productsByCategory
+      : products.slice(startIndex, endIndex);
+
+  const totalPages = Math.ceil(
+    (productsByCategory && filterCategory !== "default"
+      ? productsByCategory.length
+      : products.length) / productsPerPage
+  );
+  dispatch(
+    addTotalProducts(
+      (productsByCategory.length
+        ? productsByCategory.length
+        : products.length) + 1
+    )
+  );
 
   const handlePageChange = (page: number) => {
     setCurrentPage(page);

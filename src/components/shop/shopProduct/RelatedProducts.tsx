@@ -29,7 +29,7 @@ const RelatedProducts = () => {
   return (
     <section className="max-w-[1240px] font-poppins flex flex-col items-center mx-auto pb-9 gap-3 md:gap-11">
       <h2 className="text-4xl font-medium mb-8">Related Products</h2>
-      <div className="flex flex-wrap justify-center md:justify-start gap-8">
+      <div className="flex flex-wrap justify-center lg:justify-start gap-8">
         {categoryProducts.slice(0, displayedProducts).map((product, index) => (
           <Product key={index} product={product} />
         ))}

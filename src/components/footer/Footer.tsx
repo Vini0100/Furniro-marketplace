@@ -7,6 +7,9 @@ import {
 import { Link } from "react-router-dom";
 
 const Footer = () => {
+  const handleSocialMedia = (socialMedia: string) => {
+    window.open(`${socialMedia}`);
+  };
   return (
     <footer className=" px-1 py-12 border-t border-customGray">
       <div className="flex flex-col mx-auto gap-9 max-w-screen-xl">
@@ -20,16 +23,34 @@ const Footer = () => {
             <nav>
               <ul className="flex justify-center md:justify-start gap-4">
                 <li className="rounded-full shadow-md p-3">
-                  <FaFacebookF />
+                  <FaFacebookF
+                    className="cursor-pointer"
+                    onClick={() =>
+                      handleSocialMedia("https://www.facebook.com/")
+                    }
+                  />
                 </li>
                 <li className="rounded-full shadow-md p-3">
-                  <FaInstagram />
+                  <FaInstagram
+                    className="cursor-pointer"
+                    onClick={() =>
+                      handleSocialMedia("https://www.instagram.com/")
+                    }
+                  />
                 </li>
                 <li className="rounded-full shadow-md p-3">
-                  <FaTwitter />
+                  <FaTwitter
+                    className="cursor-pointer"
+                    onClick={() => handleSocialMedia("https://x.com/")}
+                  />
                 </li>
                 <li className="rounded-full shadow-md p-3">
-                  <FaLinkedinIn />
+                  <FaLinkedinIn
+                    className="cursor-pointer"
+                    onClick={() =>
+                      handleSocialMedia("https://www.linkedin.com/")
+                    }
+                  />
                 </li>
               </ul>
             </nav>
@@ -71,18 +92,22 @@ const Footer = () => {
           </div>
           <div className="flex md:flex-col gap-4 md:gap-14 font-poppins">
             <h4 className="text-base text-customGray">Newsletter</h4>
-            <div className="flex md:gap-3">
+            <form className="flex md:gap-3">
               <input
-                type="text"
+                type="email"
                 id="newsletterInput"
                 name="newsletterInput"
                 placeholder="Enter Your Email Address"
-                className="font-normal text-sm underline underline-offset-[3px] outline-none"
+                className="font-normal text-sm border-b pb-[0.188rem] border-black outline-none"
+                required
               />
-              <button className="font-bold text-sm underline underline-offset-[3px]">
+              <button
+                className="font-bold text-sm border-b pb-[0.188rem] border-black"
+                type="submit"
+              >
                 SUBSCRIBE
               </button>
-            </div>
+            </form>
           </div>
         </div>
         <hr />
