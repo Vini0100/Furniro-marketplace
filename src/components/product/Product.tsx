@@ -21,7 +21,7 @@ const Product = ({ product }: { product: product }) => {
   };
 
   return (
-    <div className="relative flex flex-col font-poppins w-[17.8125rem] group self-start">
+    <div className="relative flex flex-col font-poppins w-[17.8125rem] group self-start cursor-pointer">
       <div className="relative">
         <img
           src={product.images?.mainImage}
