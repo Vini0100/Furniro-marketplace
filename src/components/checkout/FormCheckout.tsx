@@ -257,7 +257,12 @@ const FormCheckout = () => {
         </div>
         <div className="px-9 py-20 items-center flex flex-col gap-10">
           <TotalCheckout />
-          <div className="flex flex-col self-start border-t border-customGray w-full pt-10">
+          <p className="font-light text-base text-customGray pt-10 border-t border-customGray">
+            Make your payment directly into our bank account. Please use your
+            Order ID as the payment reference. Your order will not be shipped
+            until the funds have cleared in our account.
+          </p>
+          <div className="flex flex-col self-start w-full">
             <fieldset className="flex flex-col gap-2">
               <label
                 htmlFor="paymentBank"
