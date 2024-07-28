@@ -7,6 +7,11 @@ const DetailsUlProduct = () => {
   const product = useSelector(
     (state: RootState) => state.productDetail.product
   );
+
+  const handleSocialMedia = (socialMedia: string) => {
+    window.open(`${socialMedia}`);
+  };
+
   return (
     <ul className="flex flex-col gap-3 text-customGray font-normal text-base">
       <li className="flex gap-4">
@@ -24,9 +29,19 @@ const DetailsUlProduct = () => {
       <li className="flex gap-4">
         <span className="w-20">Share</span>
         <span className="text-black flex items-center gap-6">
-          : <FaFacebook className="size-5" />
-          <FaLinkedin className="size-5" />
-          <AiFillTwitterCircle className="size-5" />
+          :{" "}
+          <FaFacebook
+            className="size-5"
+            onClick={() => handleSocialMedia("https://www.facebook.com/")}
+          />
+          <FaLinkedin
+            className="size-5"
+            onClick={() => handleSocialMedia("https://www.linkedin.com/")}
+          />
+          <AiFillTwitterCircle
+            className="size-5"
+            onClick={() => handleSocialMedia("https://www.x.com/")}
+          />
         </span>
       </li>
     </ul>
