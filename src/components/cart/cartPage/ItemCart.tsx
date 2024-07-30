@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import QuantityBtn from "../../global/QuantityBtn";
-import { RiDeleteBin7Fill } from "react-icons/ri";
 import { ProductWithQuantity } from "../../../types/product";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../../redux/store";
@@ -8,6 +7,7 @@ import {
   removeProductFromCart,
   updateProductQuantity,
 } from "../../../redux/features/cart/cartSlice";
+import RemoveButton from "./RemoveButton";
 
 type ItemCartProps = {
   product: ProductWithQuantity;
@@ -25,8 +25,8 @@ const ItemCart = ({ product }: ItemCartProps) => {
     dispatch(updateProductQuantity(productWithQuantity));
   }, [quantity, dispatch, product]);
 
-  const handleRemoveToCart = (sku: string) => {
-    dispatch(removeProductFromCart(sku));
+  const handleRemoveToCart = () => {
+    dispatch(removeProductFromCart(product.sku));
   };
 
   const displayPrice =
@@ -42,13 +42,12 @@ const ItemCart = ({ product }: ItemCartProps) => {
       />
       <div className="flex items-center justify-around w-full flex-wrap md:flex-nowrap">
         <span className="w-28 flex-wrap flex">{product.title}</span>
-        <span>Rs. {displayPrice.toFixed(2)}</span>
+        <span data-testid="productPrice">Rs. {displayPrice.toFixed(2)}</span>
         <QuantityBtn quantity={quantity} setQuantity={setQuantity} />
-        <span className="text-black">Rs. {totalPrice.toFixed(2)}</span>
-        <RiDeleteBin7Fill
-          onClick={() => handleRemoveToCart(product.sku)}
-          className="text-customGold cursor-pointer size-7"
-        />
+        <span data-testid="totalPrice" className="text-black">
+          Rs. {totalPrice.toFixed(2)}
+        </span>
+        <RemoveButton handleRemoveToCart={handleRemoveToCart} />
       </div>
     </li>
   );
