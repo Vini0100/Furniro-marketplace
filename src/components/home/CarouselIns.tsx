@@ -4,9 +4,14 @@ import { Splide, SplideSlide } from "@splidejs/react-splide";
 import { product } from "../../types/product";
 import { useEffect, useRef, useState } from "react";
 import { VscArrowRight, VscChevronRight } from "react-icons/vsc";
-import { Link } from "react-router-dom";
+import { addCategory } from "../../redux/features/filterShop/filterShopSlice";
+import { useDispatch } from "react-redux";
+import { AppDispatch } from "../../redux/store";
+import { useNavigate } from "react-router-dom";
 
 const CarouselIns = ({ products }: { products: product[] }) => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch<AppDispatch>();
   const splideRef = useRef<Splide>(null);
   const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
 
@@ -21,6 +26,11 @@ const CarouselIns = ({ products }: { products: product[] }) => {
     if (splideInstance) {
       setCurrentSlideIndex(splideInstance.index);
     }
+  };
+
+  const handleClickCategory = (category: string) => {
+    dispatch(addCategory(category));
+    navigate("/shop");
   };
 
   useEffect(() => {
@@ -65,8 +75,8 @@ const CarouselIns = ({ products }: { products: product[] }) => {
             <div className="relative overflow-hidden">
               <img
                 src={product.images?.mainImage}
-                alt={`Slide ${index}`}
-                className={`object-cover m-auto transition-all duration-500 ease-in-out ${
+                alt={`Slide: ${index}`}
+                className={`object-cover m-auto transition-all duration-200 ease-in-out ${
                   currentSlideIndex === index
                     ? "h-[36.375rem]"
                     : "h-[30.375rem]"
@@ -89,9 +99,12 @@ const CarouselIns = ({ products }: { products: product[] }) => {
                     </h2>
                   </div>
 
-                  <Link to={"/shop"} className="p-3 bg-customGold">
+                  <button
+                    onClick={() => handleClickCategory(product.category)}
+                    className="p-3 bg-customGold"
+                  >
                     <VscArrowRight className="size-6 text-white" />
-                  </Link>
+                  </button>
                 </div>
               )}
             </div>

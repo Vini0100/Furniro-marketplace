@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+import DiscoverButton from "./DiscoverButton";
+
 const Discover = () => {
+  const navigate = useNavigate();
+
+  const handleClickNavigate = (link: string) => {
+    navigate(link);
+  };
+
   return (
     <div className="bg-scandinavianBackground bg-cover bg-bottom bg-no-repeat flex justify-center md:justify-end items-center pt-[9.56rem] pb-32 px-14 font-poppins">
       <section className="bg-customYellow p-9 pt-[3.87rem] flex flex-col items-start gap-[2.87rem] w-[40.18rem]">
@@ -17,9 +26,9 @@ const Discover = () => {
             tellus, luctus nec ullamcorper mattis.
           </p>
         </div>
-        <button className="bg-customGold text-white font-bold text-base px-[4.5rem] py-[1.56rem]">
-          BUY Now
-        </button>
+        <DiscoverButton
+          handleClickNavigate={() => handleClickNavigate("/shop")}
+        />
       </section>
     </div>
   );

@@ -28,21 +28,21 @@ const DetailsUlProduct = () => {
       </li>
       <li className="flex gap-4">
         <span className="w-20">Share</span>
-        <span className="text-black flex items-center gap-6">
-          :{" "}
+        <nav className="flex items-center gap-6">
+          :
           <FaFacebook
-            className="size-5 cursor-pointer"
+            className="size-5 cursor-pointer text-black"
             onClick={() => handleSocialMedia("https://www.facebook.com/")}
           />
           <FaLinkedin
-            className="size-5 cursor-pointer"
+            className="size-5 cursor-pointer text-black"
             onClick={() => handleSocialMedia("https://www.linkedin.com/")}
           />
           <AiFillTwitterCircle
-            className="size-5 cursor-pointer"
+            className="size-5 cursor-pointer text-black"
             onClick={() => handleSocialMedia("https://www.x.com/")}
           />
-        </span>
+        </nav>
       </li>
     </ul>
   );

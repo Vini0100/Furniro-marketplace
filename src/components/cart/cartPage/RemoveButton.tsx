@@ -8,7 +8,7 @@ const RemoveButton: React.FC<RemoveButtonProps> = ({ handleRemoveToCart }) => {
   return (
     <RiDeleteBin7Fill
       data-testid="removeProductsButton"
-      onClick={() => handleRemoveToCart()}
+      onClick={handleRemoveToCart}
       className="text-customGold cursor-pointer size-7"
     />
   );

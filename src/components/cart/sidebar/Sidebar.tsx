@@ -31,8 +31,10 @@ const Sidebar = ({ active }: SlidebarProps) => {
             className="cursor-pointer"
           />
         </div>
-        <div className="flex flex-col min-h-[31.25rem] pt-10 justify-between border-t border-customGray9 gap-6">
-          <ItemsCart />
+        <div className="flex flex-col h-[31.25rem] pt-10 justify-between border-t border-customGray9 gap-6">
+          <div className="overflow-y-auto">
+            <ItemsCart />
+          </div>
           <SubTotal />
         </div>
       </div>
