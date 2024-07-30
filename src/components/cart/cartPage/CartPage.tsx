@@ -30,7 +30,7 @@ const CartPage = () => {
           <li>Quantity</li>
           <li>Subtotal</li>
         </ul>
-        <ul className="flex flex-col gap-6 py-14">
+        <ul className="flex flex-col gap-6 py-10 h-[31.25rem] overflow-y-auto">
           {cart.map((product: ProductWithQuantity) => (
             <ItemCart key={product.sku} product={product} />
           ))}

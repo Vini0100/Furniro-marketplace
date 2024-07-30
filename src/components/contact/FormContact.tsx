@@ -50,7 +50,7 @@ const FormContact = () => {
 
   return (
     <form
-      className="font-poppins px-[3.25rem] py-16 text-base w-full flex flex-col gap-9"
+      className="font-poppins px-[3.25rem] md:py-16 text-base w-full flex flex-col gap-9"
       onSubmit={handleSubmit}
     >
       <div className="flex flex-col gap-5">

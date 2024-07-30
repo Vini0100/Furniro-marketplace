@@ -87,7 +87,7 @@ const FormCheckout = () => {
   };
 
   return (
-    <div className="max-w-[1240px] mx-auto font-poppins py-12">
+    <div className="max-w-[1240px] mx-auto font-poppins md:py-12">
       <form
         className="flex flex-col md:flex-row font-poppins justify-between"
         onSubmit={handleSubmit(onSubmit)}
@@ -103,7 +103,7 @@ const FormCheckout = () => {
                 <input
                   type="text"
                   id="firstName"
-                  className="border border-customGray rounded-md py-4 px-1 outline-none"
+                  className="border border-customGray rounded-md py-4 px-7 outline-none"
                   {...register("firstName")}
                   value={name}
                 />
@@ -118,7 +118,7 @@ const FormCheckout = () => {
                 <input
                   type="text"
                   id="lastName"
-                  className="border border-customGray rounded-md py-4 px-1 outline-none"
+                  className="border border-customGray rounded-md py-4 px-7 outline-none"
                   {...register("lastName")}
                   value={lastName}
                 />
@@ -134,7 +134,7 @@ const FormCheckout = () => {
               <input
                 type="text"
                 id="companyName"
-                className="border border-customGray rounded-md py-4 px-1 outline-none"
+                className="border border-customGray rounded-md py-4 px-7 outline-none"
                 {...register("companyName")}
               />
               {errors.companyName && (
@@ -148,7 +148,7 @@ const FormCheckout = () => {
               <input
                 type="text"
                 id="zipCode"
-                className="border border-customGray rounded-md py-4 px-1 outline-none"
+                className="border border-customGray rounded-md py-4 px-7 outline-none"
                 {...register("zipCode")}
                 onChange={handleZipCodeChange}
               />
@@ -163,7 +163,7 @@ const FormCheckout = () => {
               <input
                 type="text"
                 id="countryRegion"
-                className="border border-customGray rounded-md py-4 px-1 outline-none"
+                className="border border-customGray rounded-md py-4 px-7 outline-none"
                 {...register("countryRegion")}
               />
               {errors.countryRegion && (
@@ -177,7 +177,7 @@ const FormCheckout = () => {
               <input
                 type="text"
                 id="streetAddress"
-                className="border border-customGray rounded-md py-4 px-1 outline-none"
+                className="border border-customGray rounded-md py-4 px-7 outline-none"
                 {...register("streetAddress")}
               />
               {errors.streetAddress && (
@@ -191,7 +191,7 @@ const FormCheckout = () => {
               <input
                 type="text"
                 id="townCity"
-                className="border border-customGray rounded-md py-4 px-1 outline-none"
+                className="border border-customGray rounded-md py-4 px-7 outline-none"
                 {...register("townCity")}
               />
               {errors.townCity && (
@@ -205,7 +205,7 @@ const FormCheckout = () => {
               <input
                 type="text"
                 id="province"
-                className="border border-customGray rounded-md py-4 px-1 outline-none"
+                className="border border-customGray rounded-md py-4 px-7 outline-none"
                 {...register("province")}
               />
               {errors.province && (
@@ -219,7 +219,7 @@ const FormCheckout = () => {
               <input
                 type="text"
                 id="addonAddress"
-                className="border border-customGray rounded-md py-4 px-1 outline-none"
+                className="border border-customGray rounded-md py-4 px-7 outline-none"
                 {...register("addonAddress")}
               />
               {errors.addonAddress && (
@@ -233,7 +233,7 @@ const FormCheckout = () => {
               <input
                 type="email"
                 id="emailAddress"
-                className="border border-customGray rounded-md py-4 px-1 outline-none"
+                className="border border-customGray rounded-md py-4 px-7 outline-none"
                 {...register("emailAddress")}
                 value={email}
               />
@@ -245,7 +245,7 @@ const FormCheckout = () => {
               <input
                 type="text"
                 placeholder="Additional information"
-                className="border border-customGray rounded-md py-4 px-1 outline-none"
+                className="border border-customGray rounded-md py-4 px-7 outline-none"
                 id="additionalInfo"
                 {...register("additionalInfo")}
               />
@@ -255,7 +255,7 @@ const FormCheckout = () => {
             </div>
           </div>
         </div>
-        <div className="px-9 py-20 items-center flex flex-col gap-10">
+        <div className="px-9 py-9 md:py-20 items-center flex flex-col gap-10">
           <TotalCheckout />
           <p className="font-light text-base text-customGray pt-10 border-t border-customGray">
             Make your payment directly into our bank account. Please use your

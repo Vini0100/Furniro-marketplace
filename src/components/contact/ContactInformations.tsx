@@ -15,7 +15,7 @@ const ContactInformations = () => {
           </p>
         </div>
         <div className="flex flex-col md:flex-row md:gap-7">
-          <div className="flex flex-col p-[4.375rem] gap-11">
+          <div className="flex flex-col p-[4.375rem] gap-11 order-last md:order-first">
             <div className=" flex gap-7 w-full">
               <FaLocationDot className="size-6" />
               <div className="flex flex-col w-48">
