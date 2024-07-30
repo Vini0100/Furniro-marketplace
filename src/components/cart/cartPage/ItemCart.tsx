@@ -25,8 +25,8 @@ const ItemCart = ({ product }: ItemCartProps) => {
     dispatch(updateProductQuantity(productWithQuantity));
   }, [quantity, dispatch, product]);
 
-  const handleRemoveToCart = () => {
-    dispatch(removeProductFromCart(product.sku));
+  const handleRemoveToCart = (sku: string) => {
+    dispatch(removeProductFromCart(sku));
   };
 
   const displayPrice =
@@ -47,7 +47,9 @@ const ItemCart = ({ product }: ItemCartProps) => {
         <span data-testid="totalPrice" className="text-black">
           Rs. {totalPrice.toFixed(2)}
         </span>
-        <RemoveButton handleRemoveToCart={handleRemoveToCart} />
+        <RemoveButton
+          handleRemoveToCart={() => handleRemoveToCart(product.sku)}
+        />
       </div>
     </li>
   );
