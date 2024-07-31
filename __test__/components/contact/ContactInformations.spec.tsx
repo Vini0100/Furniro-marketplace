@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import { describe, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import ContactInformations from "../../../src/components/contact/ContactInformations";
 
 describe("<ContactInformations />", () => {

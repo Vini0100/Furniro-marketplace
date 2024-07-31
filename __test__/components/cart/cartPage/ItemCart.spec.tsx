@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
-import { describe, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import { Provider } from "react-redux";
 import ItemCart from "../../../../src/components/cart/cartPage/ItemCart";
 import { mockProductQuantity } from "../../../mocks/customMocks";
