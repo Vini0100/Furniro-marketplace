@@ -1,9 +1,15 @@
 import { useSelector } from "react-redux";
 import { RootState } from "../../redux/store";
 import CarouselIns from "./CarouselIns";
+import { useNavigate } from "react-router-dom";
 
 const Inspirations = () => {
+  const navigate = useNavigate();
   const products = useSelector((state: RootState) => state.products.products);
+
+  const handleClick = (link: string) => {
+    navigate(link);
+  };
 
   return (
     <section className="bg-customBeige py-11 px-[6.25rem] font-poppins">
@@ -18,7 +24,10 @@ const Inspirations = () => {
               that inspire you
             </p>
           </div>
-          <button className="bg-customGold py-3 px-9 text-white font-semibold text-base">
+          <button
+            className="bg-customGold py-3 px-9 text-white font-semibold text-base"
+            onClick={() => handleClick("/shop")}
+          >
             Explore More
           </button>
         </div>

@@ -24,7 +24,7 @@ const CartPage = () => {
   return (
     <section className="mx-auto max-w-[1240px] py-1 md:py-[4.5rem] flex flex-col md:flex-row gap-[1.875rem] justify-between font-poppins">
       <div className="flex flex-col w-full">
-        <ul className="flex py-4 bg-customBeige2 justify-between px-[9.7rem] font-medium text-base ">
+        <ul className="md:flex py-4 bg-customBeige2 justify-between px-[9.7rem] font-medium text-base hidden">
           <li>Product</li>
           <li>Price</li>
           <li>Quantity</li>
