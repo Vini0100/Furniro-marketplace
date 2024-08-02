@@ -43,6 +43,7 @@ const ItemsCart = () => {
           <IoIosCloseCircle
             onClick={() => handleRemoveToCart(product.sku)}
             className="text-customGray min-h-5 min-w-5 cursor-pointer"
+            data-testid="closeIcon"
           />
         </li>
       ))}

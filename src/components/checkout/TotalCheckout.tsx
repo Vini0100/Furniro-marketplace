@@ -1,22 +1,22 @@
-import { RootState } from "../../redux/store";
 import { useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+
 const TotalCheckout = () => {
   const cart = useSelector((state: RootState) => state.cart.products);
 
   const calculateTotals = () => {
-    let subtotal = 0;
+    let total = 0;
     cart.forEach((product) => {
       const price =
         product.salePrice && product.salePrice > 0
           ? product.salePrice
           : product.normalPrice;
-      subtotal += price * (product.quantity || 0);
+      total += price * product.quantity;
     });
-    const total = subtotal;
-    return { subtotal, total };
+    return { total };
   };
 
-  const { subtotal, total } = calculateTotals();
+  const { total } = calculateTotals();
 
   return (
     <ul className="flex flex-col gap-[1.375rem] w-full">
@@ -31,7 +31,7 @@ const TotalCheckout = () => {
               ? product.salePrice
               : product.normalPrice;
           return (
-            <li key={product.id} className="flex justify-between">
+            <li key={product.sku} className="flex justify-between gap-4">
               <span className="font-normal text-base text-customGray">
                 {product.title}{" "}
                 <span className="font-medium text-black text-xs">
@@ -39,7 +39,7 @@ const TotalCheckout = () => {
                 </span>
               </span>
               <span className="text-base font-light text-nowrap">
-                Rp. {price * (product.quantity || 0)}
+                Rp. {price * product.quantity}
               </span>
             </li>
           );
@@ -47,7 +47,7 @@ const TotalCheckout = () => {
       </div>
       <li className="flex justify-between">
         <span className="font-normal text-base">Subtotal</span>
-        <span className="text-base font-light">Rp. {subtotal.toFixed(2)}</span>
+        <span className="text-base font-light">Rp. {total.toFixed(2)}</span>
       </li>
       <li className="flex justify-between">
         <span className="font-normal text-base">Total</span>

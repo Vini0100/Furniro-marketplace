@@ -96,10 +96,11 @@ const FormCheckout = () => {
           <h2 className="font-semibold text-4xl">Billing details</h2>
           <div className="flex flex-col gap-9">
             <div className="flex gap-8 flex-col md:flex-row">
-              <div className="flex flex-col gap-[1.375rem]">
-                <label htmlFor="firstName" className="font-medium text-base">
-                  First Name
-                </label>
+              <label
+                htmlFor="firstName"
+                className="font-medium text-base flex flex-col gap-[1.375rem]"
+              >
+                First Name
                 <input
                   type="text"
                   id="firstName"
@@ -108,13 +109,15 @@ const FormCheckout = () => {
                   value={name}
                 />
                 {errors.firstName && (
-                  <p className="text-red-500">{errors.firstName.message}</p>
+                  <p className="text-customRed">{errors.firstName.message}</p>
                 )}
-              </div>
-              <div className="flex flex-col gap-[1.375rem]">
-                <label htmlFor="lastName" className="font-medium text-base">
-                  Last Name
-                </label>
+              </label>
+
+              <label
+                htmlFor="lastName"
+                className="font-medium text-base flex flex-col gap-[1.375rem]"
+              >
+                Last Name
                 <input
                   type="text"
                   id="lastName"
@@ -123,14 +126,15 @@ const FormCheckout = () => {
                   value={lastName}
                 />
                 {errors.lastName && (
-                  <p className="text-red-500">{errors.lastName.message}</p>
+                  <p className="text-customRed">{errors.lastName.message}</p>
                 )}
-              </div>
-            </div>
-            <div className="flex flex-col gap-[1.375rem]">
-              <label htmlFor="companyName" className="font-medium text-base">
-                Company Name (Optional)
               </label>
+            </div>
+            <label
+              htmlFor="companyName"
+              className="font-medium text-base flex flex-col gap-[1.375rem]"
+            >
+              Company Name (Optional)
               <input
                 type="text"
                 id="companyName"
@@ -138,13 +142,14 @@ const FormCheckout = () => {
                 {...register("companyName")}
               />
               {errors.companyName && (
-                <p className="text-red-500">{errors.companyName.message}</p>
+                <p className="text-customRed">{errors.companyName.message}</p>
               )}
-            </div>
-            <div className="flex flex-col gap-[1.375rem]">
-              <label htmlFor="zipCode" className="font-medium text-base">
-                ZIP code
-              </label>
+            </label>
+            <label
+              htmlFor="zipCode"
+              className="font-medium text-base flex flex-col gap-[1.375rem]"
+            >
+              ZIP code
               <input
                 type="text"
                 id="zipCode"
@@ -153,13 +158,14 @@ const FormCheckout = () => {
                 onChange={handleZipCodeChange}
               />
               {errors.zipCode && (
-                <p className="text-red-500">{errors.zipCode.message}</p>
+                <p className="text-customRed">{errors.zipCode.message}</p>
               )}
-            </div>
-            <div className="flex flex-col gap-[1.375rem]">
-              <label htmlFor="countryRegion" className="font-medium text-base">
-                Country / Region
-              </label>
+            </label>
+            <label
+              htmlFor="countryRegion"
+              className="font-medium text-base flex flex-col gap-[1.375rem]"
+            >
+              Country / Region
               <input
                 type="text"
                 id="countryRegion"
@@ -167,13 +173,14 @@ const FormCheckout = () => {
                 {...register("countryRegion")}
               />
               {errors.countryRegion && (
-                <p className="text-red-500">{errors.countryRegion.message}</p>
+                <p className="text-customRed">{errors.countryRegion.message}</p>
               )}
-            </div>
-            <div className="flex flex-col gap-[1.375rem]">
-              <label htmlFor="streetAddress" className="font-medium text-base">
-                Street address
-              </label>
+            </label>
+            <label
+              htmlFor="streetAddress"
+              className="font-medium text-base flex flex-col gap-[1.375rem]"
+            >
+              Street address
               <input
                 type="text"
                 id="streetAddress"
@@ -181,13 +188,14 @@ const FormCheckout = () => {
                 {...register("streetAddress")}
               />
               {errors.streetAddress && (
-                <p className="text-red-500">{errors.streetAddress.message}</p>
+                <p className="text-customRed">{errors.streetAddress.message}</p>
               )}
-            </div>
-            <div className="flex flex-col gap-[1.375rem]">
-              <label htmlFor="townCity" className="font-medium text-base">
-                Town / City
-              </label>
+            </label>
+            <label
+              htmlFor="townCity"
+              className="font-medium text-base flex flex-col gap-[1.375rem]"
+            >
+              Town / City
               <input
                 type="text"
                 id="townCity"
@@ -195,13 +203,14 @@ const FormCheckout = () => {
                 {...register("townCity")}
               />
               {errors.townCity && (
-                <p className="text-red-500">{errors.townCity.message}</p>
+                <p className="text-customRed">{errors.townCity.message}</p>
               )}
-            </div>
-            <div className="flex flex-col gap-[1.375rem]">
-              <label htmlFor="province" className="font-medium text-base">
-                Province
-              </label>
+            </label>
+            <label
+              htmlFor="province"
+              className="font-medium text-base flex flex-col gap-[1.375rem]"
+            >
+              Province
               <input
                 type="text"
                 id="province"
@@ -209,13 +218,14 @@ const FormCheckout = () => {
                 {...register("province")}
               />
               {errors.province && (
-                <p className="text-red-500">{errors.province.message}</p>
+                <p className="text-customRed">{errors.province.message}</p>
               )}
-            </div>
-            <div className="flex flex-col gap-[1.375rem]">
-              <label htmlFor="addonAddress" className="font-medium text-base">
-                Add-on address
-              </label>
+            </label>
+            <label
+              htmlFor="addonAddress"
+              className="font-medium text-base flex flex-col gap-[1.375rem]"
+            >
+              Add-on address
               <input
                 type="text"
                 id="addonAddress"
@@ -223,13 +233,14 @@ const FormCheckout = () => {
                 {...register("addonAddress")}
               />
               {errors.addonAddress && (
-                <p className="text-red-500">{errors.addonAddress.message}</p>
+                <p className="text-customRed">{errors.addonAddress.message}</p>
               )}
-            </div>
-            <div className="flex flex-col gap-[1.375rem]">
-              <label htmlFor="emailAddress" className="font-medium text-base">
-                Email address
-              </label>
+            </label>
+            <label
+              htmlFor="emailAddress"
+              className="font-medium text-base flex flex-col gap-[1.375rem]"
+            >
+              Email address
               <input
                 type="email"
                 id="emailAddress"
@@ -238,21 +249,15 @@ const FormCheckout = () => {
                 value={email}
               />
               {errors.emailAddress && (
-                <p className="text-red-500">{errors.emailAddress.message}</p>
+                <p className="text-customRed">{errors.emailAddress.message}</p>
               )}
-            </div>
-            <div className="flex flex-col gap-[1.375rem]">
-              <input
-                type="text"
-                placeholder="Additional information"
-                className="border border-customGray rounded-md py-4 px-7 outline-none"
-                id="additionalInfo"
-                {...register("additionalInfo")}
-              />
-              {errors.additionalInfo && (
-                <p className="text-red-500">{errors.additionalInfo.message}</p>
-              )}
-            </div>
+            </label>
+            <input
+              id="additionalInfo"
+              placeholder="Additional information"
+              className="border border-customGray rounded-md py-4 px-7 outline-none"
+              {...register("additionalInfo")}
+            />
           </div>
         </div>
         <div className="px-9 py-9 md:py-20 items-center flex flex-col gap-10">

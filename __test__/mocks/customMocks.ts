@@ -75,7 +75,7 @@ export const mockCart = [
     category: "Racks",
     tags: ["Rack", "Rack-Fortaleza", "Sala"],
     normalPrice: 20,
-    salePrice: 20,
+    salePrice: 0,
     discountPercentage: 0.63,
     new: true,
     slug: "rack-para-tv-ate-75-polegadas-madesa-reims-2-portas-1-gaveta-branco",
@@ -96,5 +96,6 @@ export const mockCart = [
       mainImage: "mainImage.jpg",
       gallery: ["image.jpg", "image2.jpg", "image3.jpg", "image4.jpg"],
     },
+    quantity: 1,
   },
 ];

@@ -58,9 +58,13 @@ const CartPage = () => {
           </li>
         </ul>
         {user ? (
-          <CheckoutBtn onClick={() => navigate("/checkout")}>
-            Check Out
-          </CheckoutBtn>
+          subtotal <= 0 ? (
+            <CheckoutBtn disabled={true}>Check Out</CheckoutBtn>
+          ) : (
+            <CheckoutBtn onClick={() => navigate("/checkout")}>
+              Check Out
+            </CheckoutBtn>
+          )
         ) : (
           <CheckoutBtn onClick={() => navigate("/login")}>Login</CheckoutBtn>
         )}

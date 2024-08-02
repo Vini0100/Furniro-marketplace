@@ -30,5 +30,5 @@ type Iimages = {
 };
 
 export interface ProductWithQuantity extends product {
-  quantity?: number;
+  quantity: number;
 }

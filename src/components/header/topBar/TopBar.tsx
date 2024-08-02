@@ -22,7 +22,9 @@ const TopBar = () => {
         <nav className="flex items-center gap-1 text-base">
           <span className="font-medium">Home</span>
           <VscChevronRight className="text-lg" />
-          <span className="font-light">{formattedPathname}</span>
+          <span data-testid="locationText" className="font-light">
+            {formattedPathname}
+          </span>
         </nav>
       </div>
     </div>
