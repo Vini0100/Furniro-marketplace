@@ -42,7 +42,6 @@ const FormContact = () => {
       setErrors({
         name: formattedErrors.name?._errors[0],
         email: formattedErrors.email?._errors[0],
-        subject: formattedErrors.subject?._errors[0],
         message: formattedErrors.message?._errors[0],
       });
     }
@@ -53,10 +52,8 @@ const FormContact = () => {
       className="font-poppins px-[3.25rem] md:py-16 text-base w-full flex flex-col gap-9"
       onSubmit={handleSubmit}
     >
-      <div className="flex flex-col gap-5">
-        <label htmlFor="name" className="font-medium">
-          Your name
-        </label>
+      <label htmlFor="name" className="font-medium flex flex-col gap-5">
+        Your name
         <input
           type="text"
           className="border border-customGray outline-none rounded-md py-4 px-8"
@@ -67,11 +64,10 @@ const FormContact = () => {
           onChange={handleChange}
         />
         {errors.name && <p className="text-customRed">{errors.name}</p>}
-      </div>
-      <div className="flex flex-col gap-5">
-        <label htmlFor="email" className="font-medium">
-          Email address
-        </label>
+      </label>
+
+      <label htmlFor="email" className="font-medium flex flex-col gap-5">
+        Email address
         <input
           type="email"
           className="border border-customGray outline-none rounded-md py-4 px-8"
@@ -82,11 +78,9 @@ const FormContact = () => {
           onChange={handleChange}
         />
         {errors.email && <p className="text-customRed">{errors.email}</p>}
-      </div>
-      <div className="flex flex-col gap-5">
-        <label htmlFor="subject" className="font-medium">
-          Subject
-        </label>
+      </label>
+      <label htmlFor="subject" className="font-medium flex flex-col gap-5">
+        Subject
         <input
           type="text"
           className="border border-customGray outline-none rounded-md py-4 px-8"
@@ -96,12 +90,9 @@ const FormContact = () => {
           value={formData.subject}
           onChange={handleChange}
         />
-        {errors.subject && <p className="text-customRed">{errors.subject}</p>}
-      </div>
-      <div className="flex flex-col gap-5">
-        <label htmlFor="message" className="font-medium">
-          Message
-        </label>
+      </label>
+      <label htmlFor="message" className="font-medium flex flex-col gap-5">
+        Message
         <textarea
           className="border border-customGray outline-none rounded-md py-4 px-8"
           name="message"
@@ -111,7 +102,7 @@ const FormContact = () => {
           onChange={handleChange}
         />
         {errors.message && <p className="text-customRed">{errors.message}</p>}
-      </div>
+      </label>
       <button
         className="bg-customGold self-start px-[5.625rem] py-[0.875rem] rounded-md text-white font-normal text-base"
         type="submit"

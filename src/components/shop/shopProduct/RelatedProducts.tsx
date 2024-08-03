@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import ShowMoreBtn from "../../global/ShowMoreBtn";
 import { RootState } from "../../../redux/store";
 import Product from "../../product/Product";
-import { product as ProductType } from "../../../types/product";
+import { ProductWithQuantity } from "../../../types/product";
 
 const RelatedProducts = () => {
   const products = useSelector((state: RootState) => state.products.products);
@@ -11,7 +11,9 @@ const RelatedProducts = () => {
     (state: RootState) => state.productDetail.product
   );
   const [displayedProducts, setDisplayedProducts] = useState(4);
-  const [categoryProducts, setCategoryProducts] = useState<ProductType[]>([]);
+  const [categoryProducts, setCategoryProducts] = useState<
+    ProductWithQuantity[]
+  >([]);
 
   useEffect(() => {
     if (productDetails?.category) {

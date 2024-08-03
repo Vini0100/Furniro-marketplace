@@ -20,7 +20,7 @@ const DescriptionProduct = () => {
       <div className="flex flex-col">
         <h3 className="font-normal text-[2.625rem]">{productDetail?.title}</h3>
         <p className="font-medium text-2xl text-customGray">
-          Rp.&nbsp;
+          Rp.{" "}
           {productDetail &&
             (productDetail.salePrice > 0
               ? formatPrice(productDetail.salePrice)

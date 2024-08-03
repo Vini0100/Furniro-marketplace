@@ -4,10 +4,10 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { addProductToCart } from "../../redux/features/cart/cartSlice";
-import { product } from "../../types/product";
+import { ProductWithQuantity } from "../../types/product";
 import Balloon from "./Balloon";
 
-const Product = ({ product }: { product: product }) => {
+const Product = ({ product }: { product: ProductWithQuantity }) => {
   const dispatch = useDispatch<AppDispatch>();
   const navigate = useNavigate();
 
@@ -37,7 +37,7 @@ const Product = ({ product }: { product: product }) => {
           className="h-[18.75rem] object-cover"
         />
         <div className="absolute top-6 right-6 flex flex-col gap-1">
-          {product.discountPercentage !== 0 ? (
+          {product.discountPercentage > 0 ? (
             <Balloon discount={product.discountPercentage} />
           ) : null}
           {product.new && <Balloon discount={null} />}
@@ -54,10 +54,9 @@ const Product = ({ product }: { product: product }) => {
         </p>
         <div className="flex gap-4 items-center">
           <span className="text-xl text-customGray5 font-semibold">
-            Rp{" "}
-            {product.salePrice !== 0 ? product.salePrice : product.normalPrice}
+            Rp {product.salePrice > 0 ? product.salePrice : product.normalPrice}
           </span>
-          {product.salePrice !== 0 ? (
+          {product.salePrice > 0 ? (
             <span className="text-base text-customGray8 font-normal line-through">
               Rp {product.normalPrice}
             </span>

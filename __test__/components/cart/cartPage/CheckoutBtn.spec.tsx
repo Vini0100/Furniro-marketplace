@@ -1,7 +1,7 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
-import { describe, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import CheckoutBtn from "../../../../src/components/cart/cartPage/CheckoutBtn";
 
 describe("<CheckoutBtn />", () => {

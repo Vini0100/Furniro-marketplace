@@ -21,10 +21,9 @@ const cartSlice = createSlice({
       if (existingProduct) {
         state.products = state.products.map((product) => {
           if (product.sku === existingProduct.sku) {
-            const currentQuantity = product.quantity ?? 0;
             return {
               ...product,
-              quantity: currentQuantity + (action.payload.quantity ?? 1),
+              quantity: product.quantity + action.payload.quantity,
             };
           }
           return product;

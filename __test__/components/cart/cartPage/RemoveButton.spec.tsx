@@ -1,6 +1,6 @@
 import React from "react";
 import "@testing-library/jest-dom";
-import { describe, it, vi } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import RemoveButton from "../../../../src/components/cart/cartPage/RemoveButton";
 

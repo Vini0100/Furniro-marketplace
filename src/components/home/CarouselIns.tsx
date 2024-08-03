@@ -1,7 +1,7 @@
 import "@splidejs/react-splide/css";
 // @ts-expect-error: Ignoring TS error due to type definitions mismatch
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { product } from "../../types/product";
+import { Product } from "../../types/product";
 import { useEffect, useRef, useState } from "react";
 import { VscArrowRight, VscChevronRight } from "react-icons/vsc";
 import { addCategory } from "../../redux/features/filterShop/filterShopSlice";
@@ -9,7 +9,7 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "../../redux/store";
 import { useNavigate } from "react-router-dom";
 
-const CarouselIns = ({ products }: { products: product[] }) => {
+const CarouselIns = ({ products }: { products: Product[] }) => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const splideRef = useRef<Splide>(null);
@@ -72,7 +72,7 @@ const CarouselIns = ({ products }: { products: product[] }) => {
       >
         {products.map((product, index) => (
           <SplideSlide key={index}>
-            <div className="relative overflow-hidden">
+            <div className="relative overflow-hidden h-[36.375rem]">
               <img
                 src={product.images?.mainImage}
                 alt={`Slide: ${index}`}
@@ -98,7 +98,6 @@ const CarouselIns = ({ products }: { products: product[] }) => {
                       Inner Peace
                     </h2>
                   </div>
-
                   <button
                     onClick={() => handleClickCategory(product.category)}
                     className="p-3 bg-customGold"

@@ -9,6 +9,7 @@ const Card = ({ item }: CardProps) => {
     <div
       key={item.alt}
       className="flex flex-col md:flex-row items-center md:items-start gap-3 flex-grow"
+      data-testid="bottonCard"
     >
       <img
         src={item.src}

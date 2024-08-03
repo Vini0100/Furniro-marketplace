@@ -2,7 +2,7 @@ import ImagesProduct from "./ImagesProduct";
 import DescriptionProduct from "./DescriptionProduct";
 import SizeButtons from "./SizeButtons";
 import ColorButtons from "./ColorButtons";
-import AddToCart from "./handleAddToCart";
+import AddToCart from "./AddToCart";
 import DetailsUlProduct from "./DetailsUlProduct";
 
 const MainProduct = () => {

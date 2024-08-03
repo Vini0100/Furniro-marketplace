@@ -24,7 +24,10 @@ const CartPage = () => {
   return (
     <section className="mx-auto max-w-[1240px] py-1 md:py-[4.5rem] flex flex-col md:flex-row gap-[1.875rem] justify-between font-poppins">
       <div className="flex flex-col w-full">
-        <ul className="md:flex py-4 bg-customBeige2 justify-between px-[9.7rem] font-medium text-base hidden">
+        <ul
+          className="md:flex py-4 bg-customBeige2 justify-between px-[9.7rem] font-medium text-base hidden"
+          data-testid="listHeader"
+        >
           <li>Product</li>
           <li>Price</li>
           <li>Quantity</li>
@@ -55,9 +58,13 @@ const CartPage = () => {
           </li>
         </ul>
         {user ? (
-          <CheckoutBtn onClick={() => navigate("/checkout")}>
-            Check Out
-          </CheckoutBtn>
+          subtotal <= 0 ? (
+            <CheckoutBtn disabled={true}>Check Out</CheckoutBtn>
+          ) : (
+            <CheckoutBtn onClick={() => navigate("/checkout")}>
+              Check Out
+            </CheckoutBtn>
+          )
         ) : (
           <CheckoutBtn onClick={() => navigate("/login")}>Login</CheckoutBtn>
         )}

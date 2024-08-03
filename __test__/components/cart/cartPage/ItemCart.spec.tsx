@@ -1,18 +1,30 @@
 import React from "react";
 import "@testing-library/jest-dom";
-import { render, screen } from "@testing-library/react";
-import { describe, it } from "vitest";
+import { fireEvent, render, screen } from "@testing-library/react";
+import { describe, expect, it, vi } from "vitest";
 import { Provider } from "react-redux";
 import ItemCart from "../../../../src/components/cart/cartPage/ItemCart";
 import { mockProductQuantity } from "../../../mocks/customMocks";
-import { store } from "../../../../src/redux/store";
+import configureStore from "redux-mock-store";
+import { removeProductFromCart } from "../../../../src/redux/features/cart/cartSlice";
+
+const mockStore = configureStore([]);
+
 describe("<ItemCart />", () => {
   const renderComponentMock = () => {
+    const store = mockStore({
+      cart: { products: [mockProductQuantity] },
+    });
+
+    const dispatch = vi.spyOn(store, "dispatch");
+
     render(
       <Provider store={store}>
         <ItemCart product={mockProductQuantity} />
       </Provider>
     );
+
+    return dispatch;
   };
 
   it("Should render ItemCart", () => {
@@ -41,6 +53,16 @@ describe("<ItemCart />", () => {
     );
     expect(totalPrice).toHaveTextContent(
       `Rs. ${mockProductQuantity.salePrice.toFixed(2)}`
+    );
+  });
+
+  it("should dispatch removeProductFromCart when RemoveButton is clicked", () => {
+    const dispatch = renderComponentMock();
+
+    fireEvent.click(screen.getByTestId("removeProductsButton"));
+
+    expect(dispatch).toHaveBeenCalledWith(
+      removeProductFromCart(mockProductQuantity.sku)
     );
   });
 });

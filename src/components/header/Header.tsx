@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Logout from "../global/handleLogout";
+import Logout from "../global/Logout";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Service/firebase/firebaseConfig";
 import Sidebar from "../cart/sidebar/Sidebar";

@@ -12,10 +12,6 @@ const ProductsList = () => {
     .sort(() => Math.random() - 0.5)
     .slice(0, 8);
 
-  const handleClick = () => {
-    navigate("/shop");
-  };
-
   return (
     <section className="flex flex-col items-center gap-8 mx-auto max-w-[1236px] font-poppins">
       <h2 className="text-customGray5 text-[2.5rem] font-bold">Our Products</h2>
@@ -24,7 +20,7 @@ const ProductsList = () => {
           <Product key={product.id} product={product} />
         ))}
       </div>
-      <ShowMoreBtn handleClick={handleClick} />
+      <ShowMoreBtn handleClick={() => navigate("/shop")} />
     </section>
   );
 };

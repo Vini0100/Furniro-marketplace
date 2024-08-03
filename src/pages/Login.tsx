@@ -2,12 +2,14 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import {
+  useAuthState,
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
 } from "react-firebase-hooks/auth";
 import { auth } from "../Service/firebase/firebaseConfig";
-import { useAuthRedirect } from "../Service/firebase/Firebasehooks";
 import { FaGoogle } from "react-icons/fa";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const schemaForm = z.object({
   email: z.string().email("Invalid email address").min(1, "Email is required"),
@@ -17,7 +19,13 @@ const schemaForm = z.object({
 type FormData = z.infer<typeof schemaForm>;
 
 const Login = () => {
-  useAuthRedirect("/");
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (user) {
+      navigate("/");
+    }
+  }, [user, navigate]);
 
   const [signInWithEmailAndPassword, , loading, error] =
     useSignInWithEmailAndPassword(auth);

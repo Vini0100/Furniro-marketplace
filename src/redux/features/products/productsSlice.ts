@@ -1,8 +1,8 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { product } from "../../../types/product";
+import { Product, ProductWithQuantity } from "../../../types/product";
 
 export type ProductState = {
-  products: product[];
+  products: ProductWithQuantity[];
 };
 
 const initialState: ProductState = {
@@ -13,8 +13,10 @@ const productsSlice = createSlice({
   name: "products",
   initialState,
   reducers: {
-    addProducts: (state, action: PayloadAction<product[]>) => {
-      state.products.push(...action.payload);
+    addProducts: (state, action: PayloadAction<Product[]>) => {
+      action.payload.forEach((product) => {
+        state.products.push({ ...product, quantity: 1 });
+      });
     },
   },
 });

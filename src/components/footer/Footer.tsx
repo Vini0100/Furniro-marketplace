@@ -21,9 +21,13 @@ const Footer = () => {
               <p>FL 33134 USA</p>
             </div>
             <nav>
-              <ul className="flex justify-center md:justify-start gap-4">
+              <ul
+                className="flex justify-center md:justify-start gap-4"
+                data-testid="listLinks"
+              >
                 <li className="rounded-full shadow-md p-3 cursor-pointer">
                   <FaFacebookF
+                    aria-label="facebook"
                     onClick={() =>
                       handleSocialMedia("https://www.facebook.com/")
                     }
@@ -31,6 +35,7 @@ const Footer = () => {
                 </li>
                 <li className="rounded-full shadow-md p-3 cursor-pointer">
                   <FaInstagram
+                    aria-label="instagram"
                     onClick={() =>
                       handleSocialMedia("https://www.instagram.com/")
                     }
@@ -38,11 +43,13 @@ const Footer = () => {
                 </li>
                 <li className="rounded-full shadow-md p-3 cursor-pointer">
                   <FaTwitter
+                    aria-label="twitter"
                     onClick={() => handleSocialMedia("https://x.com/")}
                   />
                 </li>
                 <li className="rounded-full shadow-md p-3">
                   <FaLinkedinIn
+                    aria-label="linkedin"
                     className="cursor-pointer"
                     onClick={() =>
                       handleSocialMedia("https://www.linkedin.com/")
