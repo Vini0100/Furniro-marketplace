@@ -10,7 +10,7 @@ import { AppDispatch } from "../../redux/store";
 import { resetProductFromCart } from "../../redux/features/cart/cartSlice";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../Service/firebase/firebaseConfig";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const addressSchema = z.object({
   firstName: z.string().min(1, "First name is required"),
@@ -32,27 +32,6 @@ const FormCheckout = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch<AppDispatch>();
   const [user] = useAuthState(auth);
-  const [email, setEmail] = useState("");
-  const [name, setName] = useState("");
-  const [lastName, setLastName] = useState("");
-
-  useEffect(() => {
-    if (user?.displayName) {
-      const fullName = user?.displayName;
-      const nameParts = fullName.trim().split(" ");
-      if (fullName.length >= 1) {
-        const firstName = nameParts[0];
-        const lastName = nameParts.slice(1).join(" ");
-        setName(firstName);
-        setLastName(lastName);
-      } else {
-        setName(nameParts[0]);
-      }
-    }
-    if (user?.email) {
-      setEmail(user?.email);
-    }
-  }, [user]);
 
   const {
     register,
@@ -62,6 +41,22 @@ const FormCheckout = () => {
   } = useForm<Address>({
     resolver: zodResolver(addressSchema),
   });
+
+  useEffect(() => {
+    if (user) {
+      if (user.displayName) {
+        const fullName = user.displayName;
+        const nameParts = fullName.trim().split(" ");
+        const firstName = nameParts[0];
+        const lastName = nameParts.slice(1).join(" ");
+        setValue("firstName", firstName);
+        setValue("lastName", lastName);
+      }
+      if (user.email) {
+        setValue("emailAddress", user.email);
+      }
+    }
+  }, [user, setValue]);
 
   const handleZipCodeChange = async (
     e: React.ChangeEvent<HTMLInputElement>
@@ -106,7 +101,6 @@ const FormCheckout = () => {
                   id="firstName"
                   className="border border-customGray rounded-md py-4 px-7 outline-none"
                   {...register("firstName")}
-                  value={name}
                 />
                 {errors.firstName && (
                   <p className="text-customRed">{errors.firstName.message}</p>
@@ -123,7 +117,6 @@ const FormCheckout = () => {
                   id="lastName"
                   className="border border-customGray rounded-md py-4 px-7 outline-none"
                   {...register("lastName")}
-                  value={lastName}
                 />
                 {errors.lastName && (
                   <p className="text-customRed">{errors.lastName.message}</p>
@@ -246,7 +239,6 @@ const FormCheckout = () => {
                 id="emailAddress"
                 className="border border-customGray rounded-md py-4 px-7 outline-none"
                 {...register("emailAddress")}
-                value={email}
               />
               {errors.emailAddress && (
                 <p className="text-customRed">{errors.emailAddress.message}</p>

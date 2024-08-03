@@ -69,25 +69,24 @@ export const mockCart = [
   },
   {
     id: 2,
-    sku: "760330",
-    title:
-      "Rack para TV até 75 Polegadas Madesa Reims 2 Portas 1 Gaveta - Branco",
-    category: "Racks",
-    tags: ["Rack", "Rack-Fortaleza", "Sala"],
+    sku: "1164648",
+    title: "Mesa de Escritório em L Studio Preta 120x140 cm",
+    category: "Mesas",
+    tags: ["Mesa de Escritório", "Mesa", "Escritório"],
     normalPrice: 20,
     salePrice: 0,
     discountPercentage: 0.63,
-    new: true,
+    new: false,
     slug: "rack-para-tv-ate-75-polegadas-madesa-reims-2-portas-1-gaveta-branco",
     description: {
       short:
-        "Se você quer renovar a sua sala de estar, o Rack Madesa Reims Branco é a escolha certa para deixar sua casa ainda mais bonita e organizada!",
-      long: "O móvel possui um design super moderno, com destaque para seus pés de madeira maciça na cor marrom que, além de proporcionarem uma ótima sustentação, trazem um charme a mais para qualquer ambiente. O Rack Madesa Reims é ideal para TVs de até 75 polegadas e tem espaço de sobra! Com duas portas laterais e uma gaveta com corrediças metálicas, é perfeito para armazenar e organizar aparelhos eletrônicos, livros, objetos decorativos, DVDs e muito mais.",
+        "Com a Mesa Studio, você leva uma peça de tendência industrial para seu ambiente",
+      long: "Ter um espaço de trabalho bonito e bem decorado também faz diferença no dia a dia, não é mesmo? Com a Mesa Studio, você leva uma peça de tendência industrial para seu ambiente, que não só dá modernidade à decoração como também é fácil de combinar com cadeira, estante e outros elementos de escritório. Já o formato em L é perfeito para você que usa muitos papéis ou acessórios no dia a dia, pois deixa tudo organizado e à mão, prontinho para o uso. Daí é só aproveitar tudo isso para produzir mais e melhor ;)",
     },
     colors: [
       {
-        name: "Branco",
-        hex: "#ffffff",
+        name: "Preto",
+        hex: "#000000",
       },
     ],
     sizes: ["G", "M"],

@@ -7,7 +7,7 @@ type CardBRProps = {
 
 const CardBR = ({ src, categoty }: CardBRProps) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col font-poppins">
       <img
         src={src}
         alt={categoty}

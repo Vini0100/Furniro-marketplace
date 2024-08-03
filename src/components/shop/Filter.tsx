@@ -41,7 +41,10 @@ const Filter = () => {
         <button className="bg-transparent border-none">
           <BsViewList className="size-5" />
         </button>
-        <p className="pl-6 md:border-l-2 md:border-customGray font-normal text-base">
+        <p
+          className="pl-6 md:border-l-2 md:border-customGray font-normal text-base"
+          data-testid="showResults"
+        >
           Showing 1-<span>{productsPerPage}</span> of{" "}
           <span>{totalProducts}</span> results
         </p>

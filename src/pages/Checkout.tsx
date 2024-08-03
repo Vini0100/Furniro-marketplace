@@ -1,10 +1,20 @@
+import { useEffect } from "react";
 import BottomBar from "../components/bottonBar/BottonBar";
 import FormCheckout from "../components/checkout/FormCheckout";
 import TopBar from "../components/header/topBar/TopBar";
-import { useNotAuthRedirect } from "../Service/firebase/Firebasehooks";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../Service/firebase/firebaseConfig";
 
 const Checkout = () => {
-  useNotAuthRedirect("/login");
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
+  }, [user, navigate]);
+
   return (
     <div>
       <TopBar />

@@ -16,6 +16,7 @@ const ProductDetails = () => {
   const [found, SetFound] = useState(false);
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     const getProductDetails = () => {
       const foundProduct = products.find((p) => p.sku === productId);
       if (foundProduct) {

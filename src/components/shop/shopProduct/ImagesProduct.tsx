@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 
@@ -8,6 +8,10 @@ const ImagesProduct = () => {
   );
 
   const [mainImage, setMainImage] = useState(productDetail?.images?.mainImage);
+
+  useEffect(() => {
+    setMainImage(productDetail?.images.mainImage);
+  }, [productDetail]);
 
   return (
     <div className="flex flex-col md:flex-row gap-8">

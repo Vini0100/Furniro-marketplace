@@ -31,16 +31,19 @@ const DetailsUlProduct = () => {
         <nav className="flex items-center gap-6">
           :
           <FaFacebook
+            aria-label="facebook"
             className="size-5 cursor-pointer text-black"
             onClick={() => handleSocialMedia("https://www.facebook.com/")}
           />
           <FaLinkedin
+            aria-label="linkedin"
             className="size-5 cursor-pointer text-black"
             onClick={() => handleSocialMedia("https://www.linkedin.com/")}
           />
           <AiFillTwitterCircle
+            aria-label="twitter"
             className="size-5 cursor-pointer text-black"
-            onClick={() => handleSocialMedia("https://www.x.com/")}
+            onClick={() => handleSocialMedia("https://www.twitter.com/")}
           />
         </nav>
       </li>
