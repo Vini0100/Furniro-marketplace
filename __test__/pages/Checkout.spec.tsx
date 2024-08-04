@@ -1,13 +1,15 @@
 import React from "react";
 import { render, screen } from "@testing-library/react";
-import { describe, expect, it, Mock, vi } from "vitest";
+import { describe, expect, it, vi, Mock } from "vitest";
 import Checkout from "../../src/pages/Checkout";
 import { Provider } from "react-redux";
 import configureStore from "redux-mock-store";
 import "@testing-library/jest-dom";
 import { mockCart } from "../mocks/customMocks";
-import { MemoryRouter, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { createMemoryHistory } from "history";
+import { Router } from "react-router";
 
 vi.mock("react-firebase-hooks/auth", () => ({
   useAuthState: vi.fn(),
@@ -16,35 +18,33 @@ vi.mock("react-firebase-hooks/auth", () => ({
 const mockStore = configureStore([]);
 
 describe("<Checkout />", () => {
-  const renderComponentMock = (initialPath: string) => {
+  const renderComponentMock = (auth: boolean) => {
+    const history = createMemoryHistory();
     const store = mockStore({
       cart: {
         products: mockCart,
       },
     });
 
-    (useAuthState as Mock).mockReturnValue([
-      { uid: "123", email: "test@test.com" },
-    ]);
+    (useAuthState as Mock).mockReturnValue(
+      auth ? [{ uid: "123", email: "test@test.com" }, false] : [null, false]
+    );
 
     render(
       <Provider store={store}>
-        <MemoryRouter initialEntries={[initialPath]}>
+        <Router location={history.location} navigator={history}>
           <Routes>
             <Route path="*" element={<Checkout />} />
           </Routes>
-        </MemoryRouter>
+        </Router>
       </Provider>
     );
+
+    return history;
   };
 
-  it("Should render Cart page", () => {
-    const initialPath = "/Checkout";
-    renderComponentMock(initialPath);
-
-    expect(
-      screen.getByRole("heading", { name: "Checkout" })
-    ).toBeInTheDocument();
+  it("Should render Checkout page", () => {
+    renderComponentMock(true);
 
     expect(screen.getByLabelText("First Name")).toBeVisible();
     expect(screen.getByLabelText("Last Name")).toBeVisible();
@@ -59,5 +59,11 @@ describe("<Checkout />", () => {
     expect(checkoutBtn).not.toBeDisabled();
 
     expect(screen.getAllByTestId("bottonCard")).toHaveLength(4);
+  });
+
+  it("Should redirect to Login Page if not authenticated", () => {
+    const history = renderComponentMock(false);
+
+    expect(history.location.pathname).toBe("/login");
   });
 });

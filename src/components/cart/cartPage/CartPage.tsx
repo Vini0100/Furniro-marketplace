@@ -6,11 +6,10 @@ import { useMemo } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../../../Service/firebase/firebaseConfig";
 import CheckoutBtn from "./CheckoutBtn";
-import { useNavigate } from "react-router-dom";
 
 const CartPage = () => {
   const [user] = useAuthState(auth);
-  const navigate = useNavigate();
+
   const cart = useSelector((state: RootState) => state.cart.products);
 
   const subtotal = useMemo(() => {
@@ -58,15 +57,9 @@ const CartPage = () => {
           </li>
         </ul>
         {user ? (
-          subtotal <= 0 ? (
-            <CheckoutBtn disabled={true}>Check Out</CheckoutBtn>
-          ) : (
-            <CheckoutBtn onClick={() => navigate("/checkout")}>
-              Check Out
-            </CheckoutBtn>
-          )
+          <CheckoutBtn link="/checkout">Check Out</CheckoutBtn>
         ) : (
-          <CheckoutBtn onClick={() => navigate("/login")}>Login</CheckoutBtn>
+          <CheckoutBtn link="/login">Login</CheckoutBtn>
         )}
       </div>
     </section>
