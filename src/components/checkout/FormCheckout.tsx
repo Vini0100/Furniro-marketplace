@@ -24,6 +24,9 @@ const addressSchema = z.object({
   addonAddress: z.string().optional(),
   emailAddress: z.string().email("Invalid email address"),
   additionalInfo: z.string().optional(),
+  paymentMethod: z.enum(["bank", "cash"], {
+    errorMap: () => ({ message: "Payment method is required" }),
+  }),
 });
 
 type Address = z.infer<typeof addressSchema>;
@@ -268,8 +271,10 @@ const FormCheckout = () => {
                 <input
                   type="radio"
                   id="paymentBank"
-                  name="paymentMethod"
                   value="bank"
+                  {...register("paymentMethod", {
+                    required: "Payment method is required",
+                  })}
                   className="mr-4"
                 />
                 Direct Bank Transfer
@@ -281,12 +286,17 @@ const FormCheckout = () => {
                 <input
                   type="radio"
                   id="paymentCash"
-                  name="paymentMethod"
                   value="cash"
+                  {...register("paymentMethod", {
+                    required: "Payment method is required",
+                  })}
                   className="mr-4"
                 />
                 Cash On Delivery
               </label>
+              {errors.paymentMethod && (
+                <p className="text-customRed">{errors.paymentMethod.message}</p>
+              )}
             </fieldset>
           </div>
           <p className="font-base text-base">
