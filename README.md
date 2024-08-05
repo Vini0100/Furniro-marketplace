@@ -6,7 +6,7 @@ This project is a marketplace application developed for Compass Uol Front-end in
 
 ## Overview
 
-Furniro allows users to search for furniture, with the JSON server to fetch furniture. The user can log in with a Gmail account or access with the email and password that is in the topic [Getting Started](#-getting-started) for checking out your purchases in the cart. The project can also be accessed via an EC2 AWS instance running Apache at [Furniro](http://35.173.239.116/).
+Furniro allows users to search for furniture, with the JSON server to fetch furniture. The user can log in with a Gmail account or access with the email and password that is in the topic Getting Started for checking out your purchases in the cart. The project can also be accessed via an EC2 AWS instance running Apache at [Furniro](http://35.173.239.116/).
 
 ## 🔨 Features
 
@@ -23,28 +23,27 @@ Furniro allows users to search for furniture, with the JSON server to fetch furn
 
 ### Main Technologies
 
-- React.js
-- TypeScript
-- Redux.js
-- Tailwind CSS
-- Vite
-- React Router DOM
-- Splide
-- Axios
-- JSON-Server
-- React Hook Form
-- Zod
-- Firebase
-- React Firebase Hooks
-- React Icons
+- `React.js`
+- `TypeScript`
+- `Redux.js`
+- `Tailwind CSS`
+- `Vite`
+- `React Router DOM`
+- `Splide`
+- `JSON-Server`
+- `React Hook Form`
+- `Zod`
+- `Firebase`
+- `React Firebase Hooks`
+- `React Icons`
 
 ### Testing Tools
 
-- Vitest
-- Jest
-- Testing Library
-- history
-- Redux Mock Store
+- `Vitest`
+- `Jest`
+- `Testing Library`
+- `history`
+- `Redux Mock Store`
 
 ## 🛠️ Getting Started
 
