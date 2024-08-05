@@ -10,7 +10,7 @@ Furniro allows users to search for furniture, with the JSON server to fetch furn
 
 ## 🔨 Features
 
-- AWS S2 and S3
+- AWS EC2 and S3
 - Login with Gmail or fixed user
 - 60 products mocked
 - Filter by category
