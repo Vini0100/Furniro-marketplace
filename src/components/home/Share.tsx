@@ -13,24 +13,24 @@ const Share = () => {
         <div className="flex flex-col gap-4">
           <div className="flex items-end gap-4">
             <img
-              src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/funiroFurniture/living.png"
+              src="funiroFurniture/living.png"
               alt="Living Room"
               className="w-full md:w-[17.125rem] h-auto md:h-[23.875rem]"
             />
             <img
-              src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/funiroFurniture/office.png"
+              src="funiroFurniture/office.png"
               alt="Office"
               className="w-full md:w-[28.1875rem] h-auto md:h-[19.5rem]"
             />
           </div>
           <div className="flex items-start gap-4">
             <img
-              src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/funiroFurniture/room.png"
+              src="funiroFurniture/room.png"
               alt="Room"
               className="w-full md:w-[23.8125rem] h-auto md:h-[20.1875rem]"
             />
             <img
-              src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/funiroFurniture/tables.png"
+              src="funiroFurniture/tables.png"
               alt="Tables"
               className="w-full md:w-[21.5rem] h-auto md:h-[15.125rem]"
             />
@@ -39,7 +39,7 @@ const Share = () => {
         <div className="flex items-center justify-center">
           <div>
             <img
-              src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/funiroFurniture/dinner.png"
+              src="funiroFurniture/dinner.png"
               alt="Dinner"
               className="w-full h-auto"
             />
@@ -48,24 +48,24 @@ const Share = () => {
         <div className="flex flex-col gap-4">
           <div className="flex items-end gap-4">
             <img
-              src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/funiroFurniture/room2.png"
+              src="funiroFurniture/room2.png"
               alt="Room 2"
               className="w-full md:w-[17.125rem] h-auto md:h-[21.75rem]"
             />
             <img
-              src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/funiroFurniture/dinner2.png"
+              src="funiroFurniture/dinner2.png"
               alt="Dinner 2"
               className="w-full md:w-[28.1875rem] h-auto md:h-[27.0625rem]"
             />
           </div>
           <div className="flex items-start gap-4">
             <img
-              src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/funiroFurniture/living2.png"
+              src="funiroFurniture/living2.png"
               alt="Living Room 2"
               className="w-full md:w-[11.125rem] h-auto md:h-[15.125rem]"
             />
             <img
-              src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/funiroFurniture/kitchen.png"
+              src="funiroFurniture/kitchen.png"
               alt="Kitchen"
               className="w-full md:w-[16.125rem] h-auto md:h-[12.25rem]"
             />

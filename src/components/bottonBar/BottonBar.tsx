@@ -2,25 +2,25 @@ import Card from "./Card";
 
 const items = [
   {
-    src: "https://challenge-week-12-compass.s3.amazonaws.com/images/icons/trophy.svg",
+    src: "/bottonBar/trophy.svg",
     alt: "trophy",
     title: "High Quality",
     paragraph: "crafted from top materials",
   },
   {
-    src: "https://challenge-week-12-compass.s3.amazonaws.com/images/icons/guarantee.svg",
+    src: "/bottonBar/guarantee.svg",
     alt: "guarantee",
     title: "Warranty Protection",
     paragraph: "Over 2 years",
   },
   {
-    src: "https://challenge-week-12-compass.s3.amazonaws.com/images/icons/shipping.svg",
+    src: "/bottonBar/shipping.svg",
     alt: "shipping",
     title: "Free Shipping",
     paragraph: "Order over 150 $",
   },
   {
-    src: "https://challenge-week-12-compass.s3.amazonaws.com/images/icons/customerSupport.svg",
+    src: "/bottonBar/customerSupport.svg",
     alt: "customer Support",
     title: "24 / 7 Support",
     paragraph: "Dedicated",

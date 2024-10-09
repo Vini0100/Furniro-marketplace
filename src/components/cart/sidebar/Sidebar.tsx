@@ -25,7 +25,7 @@ const Sidebar = ({ active }: SlidebarProps) => {
         <div className="flex items-center justify-between">
           <h1 className="font-semibold text-2xl">Shopping Cart</h1>
           <img
-            src="https://challenge-week-12-compass.s3.amazonaws.com/images/icons/bagClose.svg"
+            src="/icons/bagClose.svg"
             alt="Close Cart"
             onClick={closeSidebar}
             className="cursor-pointer"
