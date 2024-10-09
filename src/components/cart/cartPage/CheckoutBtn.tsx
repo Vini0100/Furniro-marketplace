@@ -20,7 +20,7 @@ const CheckoutBtn = ({ children, link }: PropsButton) => {
 
   return (
     <button
-      type="button"
+      type="submit"
       disabled={isCartEmpty}
       onClick={handleClick}
       className={`text-nowrap border rounded-xl border-black px-[3.75rem] py-[0.875rem] font-poppins ${

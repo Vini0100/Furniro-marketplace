@@ -22,9 +22,7 @@ const Header = () => {
       <div className=" flex items-center justify-between mx-auto max-w-screen-xl flex-col md:flex-row gap-3 md:gap-0 px-1 py-7">
         <div className="flex gap-1 items-center">
           <img
-            src={
-              "https://challenge-week-12-compass.s3.amazonaws.com/images/logotype/logotype.svg"
-            }
+            src={"logotype/logotype.svg"}
             alt="Logotype"
             className="w-[50px] h-8"
           />
@@ -50,10 +48,7 @@ const Header = () => {
           {user && <Logout />}
           {!user && (
             <Link to="/login">
-              <img
-                src="https://challenge-week-12-compass.s3.amazonaws.com/images/icons/user.svg"
-                alt="User"
-              />
+              <img src="icons/user.svg" alt="User" />
             </Link>
           )}
           <div className="flex items-center">
@@ -63,7 +58,7 @@ const Header = () => {
               </div>
             )}
             <img
-              src="https://challenge-week-12-compass.s3.amazonaws.com/images/icons/cart.svg"
+              src="icons/cart.svg"
               alt="Cart"
               onClick={showSideBar}
               className="cursor-pointer"

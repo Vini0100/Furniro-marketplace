@@ -10,18 +10,9 @@ const BrowseRange = () => {
         </h3>
       </div>
       <div className="flex flex-col lg:flex-row items-center gap-5">
-        <CardBR
-          src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/browseRange/bedroom.png"
-          categoty={"Dining"}
-        />
-        <CardBR
-          src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/browseRange/dining.png"
-          categoty={"Living"}
-        />
-        <CardBR
-          src="https://challenge-week-12-compass.s3.amazonaws.com/images/home/browseRange/living.png"
-          categoty={"Bedroom"}
-        />
+        <CardBR src="browseRange/bedroom.png" categoty={"Dining"} />
+        <CardBR src="browseRange/dining.png" categoty={"Living"} />
+        <CardBR src="browseRange/living.png" categoty={"Bedroom"} />
       </div>
     </section>
   );
