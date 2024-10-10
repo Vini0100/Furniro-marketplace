@@ -27,8 +27,8 @@ export default {
       },
       backgroundImage: {
         scandinavianBackground:
-          "url('home/scandinavian-interior-mockup-wall-decal-background.png')",
-        topBarBackground: "url('topBar/topBarBg.png')",
+          "url('/home/scandinavian-interior-mockup-wall-decal-background.png')",
+        topBarBackground: "url('./public/topBar/topBarBg.png')",
       },
     },
   },
