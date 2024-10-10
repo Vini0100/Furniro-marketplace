@@ -6,11 +6,10 @@ This project is a marketplace application developed for Compass Uol Front-end in
 
 ## Overview
 
-Furniro allows users to search for furniture, with the JSON server to fetch furniture. The user can log in with a Gmail account or access with the email and password that is in the topic Getting Started for checking out your purchases in the cart. The project can also be accessed via an EC2 AWS instance running Apache at [Furniro](http://35.173.239.116/).
+Furniro allows users to search for furniture, with the JSON server to fetch furniture. The user can log in with a Gmail account or access with the email and password that is in the topic Getting Started for checking out your purchases in the cart. The project can also be accessed at [Furniro](https://furniro-marketplace.vercel.app/).
 
 ## 🔨 Features
 
-- AWS EC2 and S3
 - Login with Gmail or fixed user
 - 60 products mocked
 - Filter by category
@@ -61,7 +60,20 @@ To get a local copy of the project up and running, follow these steps:
    npm install
    ```
 
-3. Start the development server:
+3. Set up Firebase:
+   - Go to [Firebase Console](https://firebase.google.com/?hl=pt-br) and create a new project.
+   - After creating the project, generate your Firebase credentials and add them to a new .env file in your project root with the following variables:
+
+   ```bash
+   VITE_FIREBASE_API_KEY=
+   VITE_FIREBASE_AUTH_DOMAIN=
+   VITE_FIREBASE_PROJECT_ID=
+   VITE_FIREBASE_STORAGE_BUCKET=
+   VITE_FIREBASE_MESSAGING_SENDER_ID=
+   VITE_FIREBASE_APP_ID=
+   ```
+
+4. Start the development server:
 
    ```bash
    npm run dev
