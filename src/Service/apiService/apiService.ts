@@ -7,12 +7,14 @@ type FetchViacepParams = {
 
 export const fetchProducts = async () => {
   try {
-    const response = await fetch("http://localhost:3000/products");
+    const response = await fetch(
+      "https://vini0100.github.io/json-furniro/db.json"
+    );
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
     const data = await response.json();
-    return data;
+    return data.products;
   } catch (error) {
     console.error("Error:", error);
     return [];
