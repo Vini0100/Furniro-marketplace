@@ -8,7 +8,7 @@ type FetchViacepParams = {
 export const fetchProducts = async () => {
   try {
     const response = await fetch(
-      "https://vini0100.github.io/json-furniro/db.json"
+      "https://vini0100.github.io/Furniro-marketplace/json/db.json"
     );
     if (!response.ok) {
       throw new Error(`HTTP error! Status: ${response.status}`);
