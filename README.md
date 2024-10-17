@@ -51,7 +51,7 @@ To get a local copy of the project up and running, follow these steps:
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/Vini0100/Challenge-Week-12-Compass.git
+   git clone https://github.com/Vini0100/Furniro-marketplace.git
    ```
 
 2. Install dependencies:
