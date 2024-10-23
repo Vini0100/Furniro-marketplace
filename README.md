@@ -1,4 +1,4 @@
-# <img src="https://challenge-week-12-compass.s3.amazonaws.com/images/logotype/logotype.svg" alt="Logotype" style="margin-left: 20px; vertical-align: middle; width: 30px" /> Furniro
+# Furniro
 
 ![Badge Status](http://img.shields.io/static/v1?label=STATUS&message=FINISH&color=GREEN&style=for-the-badge)
 
